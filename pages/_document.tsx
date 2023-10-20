@@ -12,12 +12,8 @@ export default class MyDocument extends Document {
 						rel="stylesheet"
 						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 					/>
-					<link
-						rel="icon"
-						href="/smartcontract-ui/icons/fav.png"
-						type="image/png"
-					/>
-					<link rel="manifest" href="/smartcontract-ui/manifest.json" />
+					<link rel="icon" href="/icons/fav.png" type="image/png" />
+					<link rel="manifest" href="/manifest.json" />
 					<script
 						dangerouslySetInnerHTML={{
 							__html: `
@@ -45,7 +41,7 @@ export default class MyDocument extends Document {
 
 					<script
 						dangerouslySetInnerHTML={{
-							__html: `if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js') }`,
+							__html: `if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/smartcontract-ui/sw.js') }`,
 						}}
 					></script>
 				</body>
