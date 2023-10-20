@@ -1,25 +1,25 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
-import { anonymous, injected } from 'config/connectors'
-import { useWeb3React } from '@web3-react/core'
+import { anonymous, injected } from "config/connectors";
+import { useWeb3React } from "@web3-react/core";
 
 export const useEagerConnect = () => {
-  const { activate, active } = useWeb3React()
+	const { activate, active } = useWeb3React();
 
-  const [tried, setTried] = useState(false)
+	const [tried, setTried] = useState(false);
 
-  useEffect(() => {
-    injected.isAuthorized().then((isAuthorized: boolean) => {
-      if (isAuthorized) {
-        activate(injected, undefined, true).catch(() => {
-          setTried(true)
-        })
-      } else {
+	useEffect(() => {
+		injected.isAuthorized().then((isAuthorized: boolean) => {
+			if (isAuthorized) {
+				activate(injected, undefined, true).catch(() => {
+					setTried(true);
+				});
+			} else {
 				activate(anonymous, undefined, true).catch(() => {
-					setTried(true)
-				})
+					setTried(true);
+				});
 
-        // binance.isAuthorized().then((isAuthorized: boolean) => {
+				// binance.isAuthorized().then((isAuthorized: boolean) => {
 				// 	if (isAuthorized) {
 				// 		activate(binance, undefined, true).catch(() => {
 				// 			setTried(true)
@@ -31,16 +31,16 @@ export const useEagerConnect = () => {
 				// 		})
 				// 	}
 				// })
-      }
-    })
-  }, []) // intentionally only running on mount (make sure it's only mounted once :))
+			}
+		});
+	}, []); // intentionally only running on mount (make sure it's only mounted once :))
 
-  // if the connection worked, wait until we get confirmation of that to flip the flag
-  useEffect(() => {
-    if (!tried && active) {
-      setTried(true)
-    }
-  }, [tried, active])
+	// if the connection worked, wait until we get confirmation of that to flip the flag
+	useEffect(() => {
+		if (!tried && active) {
+			setTried(true);
+		}
+	}, [tried, active]);
 
-  return tried
-}
+	return tried;
+};

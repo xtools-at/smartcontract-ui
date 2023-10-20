@@ -1,15 +1,15 @@
 export const query = (object: any, path: string) => {
-	const components = path.split('.')
-	let result = object
-	let currentPath = ''
+	const components = path.split(".");
+	let result = object;
+	let currentPath = "";
 	for (let part of components) {
-		currentPath += `.${part}`
+		currentPath += `.${part}`;
 		if (result[part] === void 0) {
-			throw new Error(`INVALID_PATH ${currentPath}`)
-			break
+			throw new Error(`INVALID_PATH ${currentPath}`);
+			break;
 		}
-		result = result[part]
+		result = result[part];
 	}
 
-	return result
-}
+	return result;
+};
