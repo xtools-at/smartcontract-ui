@@ -58,7 +58,7 @@ export default function App(props: MyAppProps) {
 				<meta property="og:url" content={`${host}${basePath}`} />
 				<meta
 					property="og:image"
-					content={`${host}${basePath}/icons/banner.png`}
+					content={`${host}${basePath}/icons/512-maskable.png`}
 				/>
 				<meta property="og:description" content={description} />
 				<meta property="og:type" content="website" />
@@ -68,7 +68,7 @@ export default function App(props: MyAppProps) {
 				<meta name="twitter:description" content={description} />
 				<meta
 					name="twitter:image:src"
-					content={`${host}${basePath}/icons/512.png`}
+					content={`${host}${basePath}/icons/512-maskable.png`}
 				/>
 				<meta name="twitter:creator" content={creatorTwitter} />
 			</Head>
