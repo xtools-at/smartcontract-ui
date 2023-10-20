@@ -28,7 +28,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useSnackbar } from "notistack";
-import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import LogoIcon from "@mui/icons-material/Fingerprint";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { SourceBrowser } from "components/SourceBrowser";
@@ -43,7 +43,7 @@ import { log, warn, fatal } from "utils/logger";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { signers } from "config/signers";
 import { Signer } from "types/Signer";
-import { basePath } from "../config/app";
+import { basePath, name } from "../config/app";
 
 export default function Page() {
 	// snackbar
@@ -785,7 +785,7 @@ export default function Page() {
 				<Grid
 					item
 					xs={false}
-					sm={3}
+					sm={4}
 					md={6}
 					lg={7}
 					sx={{ display: { xs: "none", sm: "block" } }}
@@ -804,7 +804,7 @@ export default function Page() {
 				<Grid
 					item
 					xs={12}
-					sm={9}
+					sm={8}
 					md={6}
 					lg={5}
 					component={Paper}
@@ -822,11 +822,11 @@ export default function Page() {
 					>
 						<Link href={`${basePath || "/"}`}>
 							<Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-								<AccountTreeIcon />
+								<LogoIcon />
 							</Avatar>
 						</Link>
 						<Typography component="h1" variant="h5">
-							Smart Contract UI
+							{name}
 						</Typography>
 						<Box
 							component="div"

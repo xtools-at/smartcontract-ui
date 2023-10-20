@@ -9,6 +9,14 @@ import createEmotionCache from "utils/createEmotionCache";
 import { SnackbarProvider } from "notistack";
 import { Web3Provider } from "@ethersproject/providers";
 import { Web3ReactProvider } from "@web3-react/core";
+import {
+	basePath,
+	name,
+	title,
+	description,
+	host,
+	creatorTwitter,
+} from "../config/app";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -39,11 +47,30 @@ export default function App(props: MyAppProps) {
 	return (
 		<CacheProvider value={emotionCache}>
 			<Head>
-				<title>Smart Contract UI</title>
+				<title>{title}</title>
+				<meta name="description" content={description} />
 				<meta
 					name="viewport"
 					content="minimal-ui=yes, width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"
 				/>
+				<meta property="og:site_name" content={name} />
+				<meta property="og:title" content={title} />
+				<meta property="og:url" content={`${host}${basePath}`} />
+				<meta
+					property="og:image"
+					content={`${host}${basePath}/icon/banner.png`}
+				/>
+				<meta property="og:description" content={description} />
+				<meta property="og:type" content="website" />
+				<meta property="og:locale" content="en" />
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:title" content={name} />
+				<meta name="twitter:description" content={description} />
+				<meta
+					name="twitter:image:src"
+					content={`${host}${basePath}/icon/banner.png`}
+				/>
+				<meta name="twitter:creator" content={creatorTwitter} />
 			</Head>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />

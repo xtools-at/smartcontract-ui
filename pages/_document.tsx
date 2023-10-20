@@ -9,16 +9,38 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
+					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link
 						rel="stylesheet"
 						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 					/>
+					<link rel="manifest" href={`${basePath || ""}/manifest.json`} />
 					<link
 						rel="icon"
-						href={`${basePath || ""}/icons/fav.png`}
-						type="image/png"
+						href={`${basePath || ""}/favicon.ico`}
+						type="image/x-icon"
+						sizes="any"
 					/>
-					<link rel="manifest" href={`${basePath || ""}/manifest.json`} />
+					<link
+						rel="icon"
+						href={`${basePath || ""}/icons/192.png`}
+						type="image/png"
+						sizes="192x192"
+					/>
+					<link
+						rel="icon"
+						href={`${basePath || ""}/icons/512.png`}
+						type="image/png"
+						sizes="512x512"
+					/>
+					<link
+						rel="apple-touch-icon"
+						href={`${basePath || ""}/icons/apple-touch-icon.png`}
+					/>
+					<meta name="mobile-web-app-capable" content="yes" />
+					<meta name="apple-mobile-web-app-capable" content="yes" />
+					<meta name="format-detection" content="telephone=no" />
+
 					<script
 						dangerouslySetInnerHTML={{
 							__html: `

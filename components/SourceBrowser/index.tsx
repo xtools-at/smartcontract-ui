@@ -273,9 +273,9 @@ export const SourceBrowser = ({
 								toggleImportDialog(true);
 							}}
 						>
-							import from contract
+							import contract ABI
 						</Link>{" "}
-						via Etherscan/Sourcify.
+						from Etherscan/Sourcify.
 					</>
 				}
 			/>
