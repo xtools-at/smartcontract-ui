@@ -286,7 +286,9 @@ export default function Page() {
 	useEffect(() => {
 		if (url) {
 			(async () => {
-				const abiUrl = `${basePath ? `${basePath}/` : ""}${url}`;
+				const abiUrl = url.startsWith("/")
+					? `${basePath ? `${basePath}/` : ""}${url}`
+					: url;
 				try {
 					const jsonContent = await (await fetch(abiUrl)).json();
 
