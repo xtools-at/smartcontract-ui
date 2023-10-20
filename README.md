@@ -1,6 +1,6 @@
 <div align="center">
 	<img
-		src="blob/main/public/icons/192.png"
+		src="public/icons/192.png"
 		height="64"
 	/>
   <br />
