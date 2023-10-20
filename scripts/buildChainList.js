@@ -7,7 +7,10 @@ const {
 	BSCSCAN_API_KEY,
 	FTMSCAN_API_KEY,
 	POLYGON_API_KEY,
+	SNOWTRACE_API_KEY,
 } = require(__dirname + "/../config/keys.json");
+
+const NO_API_KEY = ETHERSCAN_API_KEY;
 
 const chainsAbiApi = {
 	1: `result https://api.etherscan.io/api?module=contract&action=getabi&address={ADDRESS}&apikey=${ETHERSCAN_API_KEY}`,
@@ -19,14 +22,14 @@ const chainsAbiApi = {
 	42: `result https://api-kovan.etherscan.io/api?module=contract&action=getabi&address={ADDRESS}&apikey=${ETHERSCAN_API_KEY}`,
 	56: `result https://api.bscscan.com/api?module=contract&action=getabi&address={ADDRESS}&apikey=${BSCSCAN_API_KEY}`,
 	97: `result https://api-testnet.bscscan.com/api?module=contract&action=getabi&address={ADDRESS}&apikey=${BSCSCAN_API_KEY}`,
-	128: `result https://api.hecoinfo.com/api?module=contract&action=getabi&address={ADDRESS}&apikey=${ETHERSCAN_API_KEY}`,
+	128: `result https://api.hecoinfo.com/api?module=contract&action=getabi&address={ADDRESS}&apikey=${NO_API_KEY}`,
 	137: `result https://api.polygonscan.com/api?module=contract&action=getabi&address={ADDRESS}&apikey=${POLYGON_API_KEY}`,
-	70: `result https://api.hooscan.com/api?module=contract&action=getabi&address={ADDRESS}&apikey=${ETHERSCAN_API_KEY}`,
+	70: `result https://api.hooscan.com/api?module=contract&action=getabi&address={ADDRESS}&apikey=${NO_API_KEY}`,
 	250: `result https://api.ftmscan.com/api?module=contract&action=getabi&address={ADDRESS}&apikey=${FTMSCAN_API_KEY}`,
 	321: `data.0.contract_abi https://explorer.kcc.io/v2api/contract/getabi?address={ADDRESS}`,
 	4002: `result https://api-testnet.ftmscan.com/api?module=contract&action=getabi&address={ADDRESS}&apikey=${FTMSCAN_API_KEY}`,
-	43113: `result https://api-testnet.snowtrace.io/api?module=contract&action=getabi&address={ADDRESS}&apikey=${ETHERSCAN_API_KEY}`,
-	43114: `result https://api.snowtrace.io/api?module=contract&action=getabi&address={ADDRESS}&apikey=${ETHERSCAN_API_KEY}`,
+	43113: `result https://api-testnet.snowtrace.io/api?module=contract&action=getabi&address={ADDRESS}&apikey=${SNOWTRACE_API_KEY}`,
+	43114: `result https://api.snowtrace.io/api?module=contract&action=getabi&address={ADDRESS}&apikey=${SNOWTRACE_API_KEY}`,
 	80001: `result https://api-mumbai.polygonscan.com/api?module=contract&action=getabi&address={ADDRESS}&apikey=${POLYGON_API_KEY}`,
 };
 
