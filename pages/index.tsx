@@ -43,6 +43,7 @@ import { log, warn, fatal } from "utils/logger";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { signers } from "config/signers";
 import { Signer } from "types/Signer";
+import { basePath } from "../config/app";
 
 export default function Page() {
 	// snackbar
@@ -285,8 +286,9 @@ export default function Page() {
 	useEffect(() => {
 		if (url) {
 			(async () => {
+				const abiUrl = `${basePath ? `${basePath}/` : ""}${url}`;
 				try {
-					const jsonContent = await (await fetch(url)).json();
+					const jsonContent = await (await fetch(abiUrl)).json();
 
 					log("url -> set source");
 					setSource(url);
@@ -433,14 +435,14 @@ export default function Page() {
 	);
 
 	useEffect(() => {
-		let shoudlLockParams = false;
+		let shouldLockParams = false;
 
 		if (router.query.network || router.query.func || router.query.address) {
-			shoudlLockParams = true;
+			shouldLockParams = true;
 		} else {
 			for (let key in router.query) {
 				if (key.startsWith("args.")) {
-					shoudlLockParams = true;
+					shouldLockParams = true;
 					break;
 				}
 			}
@@ -450,7 +452,7 @@ export default function Page() {
 			toggleImportDialog(true);
 		}
 
-		if (shoudlLockParams) {
+		if (shouldLockParams) {
 			log("lock params");
 			toggleParamsLock(true);
 		}
@@ -786,18 +788,19 @@ export default function Page() {
 					sm={3}
 					md={6}
 					lg={7}
-					sx={{
-						backgroundImage:
-							"url(https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y3J5cHRvfHx8fHx8MTY3MDAzODc3OQ&ixlib=rb-4.0.3&q=80&w=1080)",
-						backgroundRepeat: "no-repeat",
-						backgroundColor: (t) =>
-							t.palette.mode === "light"
-								? t.palette.grey[50]
-								: t.palette.grey[900],
-						backgroundSize: "cover",
-						backgroundPosition: "center",
-					}}
-				/>
+					sx={{ display: { xs: "none", sm: "block" } }}
+				>
+					<iframe
+						src="https://onbeam.com"
+						scrolling="no"
+						style={{
+							width: "100%",
+							height: "100%",
+							overflow: "hidden",
+							border: 0,
+						}}
+					/>
+				</Grid>
 				<Grid
 					item
 					xs={12}
@@ -817,16 +820,12 @@ export default function Page() {
 							alignItems: "center",
 						}}
 					>
-						<Link href="/">
+						<Link href={`${basePath || "/"}`}>
 							<Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
 								<AccountTreeIcon />
 							</Avatar>
 						</Link>
-						<Typography
-							component="h1"
-							variant="h5"
-							sx={{ position: "absolute", left: "-99999px" }}
-						>
+						<Typography component="h1" variant="h5">
 							Smart Contract UI
 						</Typography>
 						<Box
@@ -960,7 +959,7 @@ export default function Page() {
 									target="_blank"
 									rel="noopener"
 								>
-									Beam Network
+									Beam network
 								</Link>
 								<br />
 								<Link

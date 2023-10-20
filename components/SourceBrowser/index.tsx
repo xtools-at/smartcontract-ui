@@ -18,8 +18,8 @@ import { Chain } from "types/Chain";
 import { query } from "utils/jsonQuery";
 import Autocomplete from "@mui/material/Autocomplete";
 import { log } from "utils/logger";
-
 import { SlideUpTransition } from "utils/transitions";
+import { basePath, corsProxyUrlPrefix } from "config/app";
 
 export const SourceBrowser = ({
 	onFileChange,
@@ -87,8 +87,12 @@ export const SourceBrowser = ({
 
 	const importAbiSourcify = async (chain: Chain) => {
 		// Sourcify.dev
-		const urlPartial = `https://repo.sourcify.dev/contracts/partial_match/${chain.chainId}/${address}/metadata.json`;
-		const urlFull = `https://repo.sourcify.dev/contracts/full_match/${chain.chainId}/${address}/metadata.json`;
+		const urlPartial = `${corsProxyUrlPrefix}${encodeURIComponent(
+			`https://repo.sourcify.dev/contracts/partial_match/${chain.chainId}/${address}/metadata.json`
+		)}`;
+		const urlFull = `${corsProxyUrlPrefix}${encodeURIComponent(
+			`https://repo.sourcify.dev/contracts/full_match/${chain.chainId}/${address}/metadata.json`
+		)}`;
 		let data;
 
 		toggleImportStatus(true);
@@ -213,28 +217,56 @@ export const SourceBrowser = ({
 				helperText={
 					<>
 						Try quicklinks:{" "}
-						<Link href="/?json=/uniswapV2Router.json&address=0x965B104e250648d01d4B3b72BaC751Cde809D29E&func=getAmountsIn&network=4337">
+						<Link
+							href={`${
+								basePath || ""
+							}/?json=/uniswapV2Router.json&address=0x965B104e250648d01d4B3b72BaC751Cde809D29E&func=getAmountsIn&network=4337`}
+						>
 							BeamSwap
 						</Link>
 						,{" "}
-						<Link href="/?json=/weth.json&address=0xD51BFa777609213A653a2CD067c9A0132a2D316A&func=deposit&network=4337">
+						<Link
+							href={`${
+								basePath || ""
+							}/?json=/weth.json&address=0xD51BFa777609213A653a2CD067c9A0132a2D316A&func=deposit&network=4337`}
+						>
 							WMC
 						</Link>
 						,{" "}
-						<Link href="/?json=/erc20.json&address=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304&func=transfer&network=4337">
+						<Link
+							href={`${
+								basePath || ""
+							}/?json=/erc20.json&address=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304&func=transfer&network=4337`}
+						>
 							USDC
 						</Link>
 						,{" "}
-						<Link href="/?json=/erc721.json&address=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304&func=safeTransferFrom&network=4337">
+						<Link
+							href={`${
+								basePath || ""
+							}/?json=/erc20.json&address=0x00E69e0b6014d77040b28E04F2b8ac25A6EA5d34&func=transfer&network=4337`}
+						>
+							ERC20
+						</Link>
+						,{" "}
+						<Link
+							href={`${
+								basePath || ""
+							}/?json=/erc721.json&address=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304&func=safeTransferFrom&network=4337`}
+						>
 							ERC721
 						</Link>
 						,{" "}
-						<Link href="/?json=/erc1155.json&func=safeTransferFrom">
+						<Link
+							href={`${
+								basePath || ""
+							}/?json=/erc1155.json&func=safeTransferFrom`}
+						>
 							ERC1155
 						</Link>
 						.
 						<br />
-						or{" "}
+						Or{" "}
 						<Link
 							sx={{ cursor: "pointer" }}
 							onClick={() => {
@@ -242,8 +274,8 @@ export const SourceBrowser = ({
 							}}
 						>
 							import from contract
-						</Link>
-						.
+						</Link>{" "}
+						via Etherscan/Sourcify.
 					</>
 				}
 			/>
@@ -273,6 +305,7 @@ export const SourceBrowser = ({
 								)}
 								value={chain}
 								onChange={(_, newValue: Chain | null) => {
+									/*
 									if (newValue !== null) {
 										if (!newValue.abi) {
 											onError(
@@ -281,6 +314,7 @@ export const SourceBrowser = ({
 											return;
 										}
 									}
+									*/
 									onChainChange(newValue);
 								}}
 								inputValue={chainSearchText}
