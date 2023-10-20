@@ -252,16 +252,12 @@ export const SourceBrowser = ({
 						<Link
 							href={`${
 								basePath || ""
-							}/?json=/erc721.json&address=0x6702e778780AD5f0d1C1C53E367971B1ad3FD223&func=safeTransferFrom&network=4337`}
+							}/?json=/erc721.json&address=0x6702e778780AD5f0d1C1C53E367971B1ad3FD223&func=name&network=4337`}
 						>
 							ERC721
 						</Link>
 						,{" "}
-						<Link
-							href={`${
-								basePath || ""
-							}/?json=/erc1155.json&func=safeTransferFrom`}
-						>
+						<Link href={`${basePath || ""}/?json=/erc1155.json&func=uri`}>
 							ERC1155
 						</Link>
 						.
