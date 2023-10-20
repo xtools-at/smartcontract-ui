@@ -17,11 +17,7 @@ const OFFLINE_PAGE = "/404.html";
 // contains info about lost internet connection and a link
 // to home page (/offline.html).
 
-
-const CACHE_FILES = [
-  "/",
-  OFFLINE_PAGE
-];
+const CACHE_FILES = ["/", OFFLINE_PAGE];
 
 // We want to cache only articles. So this is a regular expression
 // that matches the article path (/w/Article_name).
@@ -32,16 +28,17 @@ const CACHE_FILES = [
 // When you visit the wiki for the first time,
 // the list CACHE_FILES will be pre-cached for further usage. See:
 // https://developers.google.com/web/fundamentals/primers/service-workers/#install_a_service_worker
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(CACHE_FILES);
-      })
-      .catch(err => {
-        console.error('[SW] failed', err)
-      })
-  );
+self.addEventListener("install", (event) => {
+	event.waitUntil(
+		caches
+			.open(CACHE_NAME)
+			.then((cache) => {
+				return cache.addAll(CACHE_FILES);
+			})
+			.catch((err) => {
+				console.error("[SW] failed", err);
+			})
+	);
 });
 
 // When you click any link, we want to serve some content:
@@ -54,57 +51,59 @@ self.addEventListener("install", event => {
 // Other content will be served only online.
 // See:
 // https://developers.google.com/web/fundamentals/primers/service-workers/#cache_and_return_requests
-self.addEventListener("fetch", event => {
-  // console.log('[TRY] ' + event.request.url)
-  event.respondWith(
-    fetch(event.request, { 
-      // credentials: "include" 
-    })
-      .then(response => {
-        // console.log('[SUCCESS] ' + event.request.url)
-        if (!response || response.status !== 200 || response.type !== "basic") {
-          return response;
-        }
-        let requestClone = response.clone();
-        caches.open(CACHE_NAME)
-          .then(cache => { cache.put(event.request, requestClone); });
-        return response;
-      })
-      .catch(() => {
-        // console.log('[FAILED] ' + event.request.url)
-        return caches.match(event.request)
-          .then(response => {
-            // console.log('[CACHE][GOT] ' + event.request.url)
-            if (response) {
-              // console.log('[CACHE][HIT] ' + event.request.url)
-              return response;
-            }
-            else if (event.request.headers.get("Accept").includes("text/html")) {
-              // console.log('[CACHE][MISS][offline] ' + event.request.url)
-              return caches.match(OFFLINE_PAGE);
-            }
-            else {
-              // console.log('[CACHE][MISS][---] ' + event.request.url)
-            }
-          })
-          .catch(() => {
-            // console.log('[CACHE][FAILED] ' + event.request.url)
-          })
-      }));
+self.addEventListener("fetch", (event) => {
+	// console.log('[TRY] ' + event.request.url)
+	event.respondWith(
+		fetch(event.request, {
+			// credentials: "include"
+		})
+			.then((response) => {
+				// console.log('[SUCCESS] ' + event.request.url)
+				if (!response || response.status !== 200 || response.type !== "basic") {
+					return response;
+				}
+				let requestClone = response.clone();
+				caches.open(CACHE_NAME).then((cache) => {
+					cache.put(event.request, requestClone);
+				});
+				return response;
+			})
+			.catch(() => {
+				// console.log('[FAILED] ' + event.request.url)
+				return caches
+					.match(event.request)
+					.then((response) => {
+						// console.log('[CACHE][GOT] ' + event.request.url)
+						if (response) {
+							// console.log('[CACHE][HIT] ' + event.request.url)
+							return response;
+						} else if (
+							event.request.headers.get("Accept").includes("text/html")
+						) {
+							// console.log('[CACHE][MISS][offline] ' + event.request.url)
+							return caches.match(OFFLINE_PAGE);
+						} else {
+							// console.log('[CACHE][MISS][---] ' + event.request.url)
+						}
+					})
+					.catch(() => {
+						// console.log('[CACHE][FAILED] ' + event.request.url)
+					});
+			})
+	);
 });
 
 // If you ever change your service worker and change your cache name,
 // you certainly want to delete the old cache. See:
 // https://developers.google.com/web/fundamentals/primers/service-workers/#update-a-service-worker
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(cache_names => {
-      return Promise.all(
-        cache_names.map(cache_unit => {
-          if (cache_unit !== CACHE_NAME)
-            return caches.delete(cache_unit);
-        })
-      );
-    })
-  );
+self.addEventListener("activate", (event) => {
+	event.waitUntil(
+		caches.keys().then((cache_names) => {
+			return Promise.all(
+				cache_names.map((cache_unit) => {
+					if (cache_unit !== CACHE_NAME) return caches.delete(cache_unit);
+				})
+			);
+		})
+	);
 });

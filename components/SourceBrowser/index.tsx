@@ -1,25 +1,25 @@
-import { useRef, MouseEvent, useState, useCallback } from 'react'
-import TextField from '@mui/material/TextField'
-import LoadingButton from '@mui/lab/LoadingButton'
-import IconButton from '@mui/material/IconButton'
-import UploadFileIcon from '@mui/icons-material/UploadFile'
-import Link from '@mui/material/Link'
-import Tooltip from '@mui/material/Tooltip'
-import { Instance } from '@popperjs/core'
-import Button from '@mui/material/Button'
-import Dialog from '@mui/material/Dialog'
-import DialogActions from '@mui/material/DialogActions'
-import DialogContent from '@mui/material/DialogContent'
-import DialogContentText from '@mui/material/DialogContentText'
-import DialogTitle from '@mui/material/DialogTitle'
-import Grid from '@mui/material/Grid'
-import { chains } from 'config/chains'
-import { Chain } from 'types/Chain'
-import { query } from 'utils/jsonQuery'
-import Autocomplete from '@mui/material/Autocomplete'
-import { log } from 'utils/logger'
+import { useRef, MouseEvent, useState, useCallback } from "react";
+import TextField from "@mui/material/TextField";
+import LoadingButton from "@mui/lab/LoadingButton";
+import IconButton from "@mui/material/IconButton";
+import UploadFileIcon from "@mui/icons-material/UploadFile";
+import Link from "@mui/material/Link";
+import Tooltip from "@mui/material/Tooltip";
+import { Instance } from "@popperjs/core";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Grid from "@mui/material/Grid";
+import { chains } from "config/chains";
+import { Chain } from "types/Chain";
+import { query } from "utils/jsonQuery";
+import Autocomplete from "@mui/material/Autocomplete";
+import { log } from "utils/logger";
 
-import { SlideUpTransition } from 'utils/transitions'
+import { SlideUpTransition } from "utils/transitions";
 
 export const SourceBrowser = ({
 	onFileChange,
@@ -32,241 +32,291 @@ export const SourceBrowser = ({
 	chain,
 	onChainChange,
 
-
 	address,
 	onAddressChange,
 
 	onAbiImport,
 
 	importDialogIsOpen,
-	toggleImportDialog
+	toggleImportDialog,
 }: {
-	onFileChange: (event: any) => void,
-	source: string,
-	onSourceChange: (source: string) => void,
-	onUrlChange: (url: string) => void,
-	onJsonChange: (json: any) => void,
-	onError: (err: any) => void,
+	onFileChange: (event: any) => void;
+	source: string;
+	onSourceChange: (source: string) => void;
+	onUrlChange: (url: string) => void;
+	onJsonChange: (json: any) => void;
+	onError: (err: any) => void;
 
+	chain: Chain | null | undefined;
+	onChainChange: (chain: Chain | null | undefined) => void;
 
-	chain: Chain | null | undefined,
-	onChainChange: (chain: Chain | null | undefined) => void,
+	address: string;
+	onAddressChange: (address: string) => void;
 
+	onAbiImport: (abi: any) => void;
 
-	
-	address: string,
-	onAddressChange: (address: string) => void,
-
-	onAbiImport: (abi: any) => void,
-
-	importDialogIsOpen: boolean,
-	toggleImportDialog: (open: boolean) => void
+	importDialogIsOpen: boolean;
+	toggleImportDialog: (open: boolean) => void;
 }) => {
 	const positionRef = useRef<{ x: number; y: number }>({
 		x: 0,
 		y: 0,
-	})
-	const popperRef = useRef<Instance>(null)
-	const areaRef = useRef<HTMLDivElement>(null)
+	});
+	const popperRef = useRef<Instance>(null);
+	const areaRef = useRef<HTMLDivElement>(null);
 
-	const handleMouseMove = useCallback((event: MouseEvent) => {
-		positionRef.current = { x: event.clientX, y: event.clientY }
+	const handleMouseMove = useCallback(
+		(event: MouseEvent) => {
+			positionRef.current = { x: event.clientX, y: event.clientY };
 
-		if (popperRef.current != null) {
-			popperRef.current.update()
-		}
-	}, [
-		positionRef,
-		popperRef
-	])
+			if (popperRef.current != null) {
+				popperRef.current.update();
+			}
+		},
+		[positionRef, popperRef]
+	);
 
-	const [isImporting, toggleImportStatus] = useState(false)
+	const [isImporting, toggleImportStatus] = useState(false);
 
 	const closeImportDialog = useCallback(() => {
-		toggleImportStatus(false)
-		toggleImportDialog(false)
-	}, [])
+		toggleImportStatus(false);
+		toggleImportDialog(false);
+	}, []);
 
-	const [chainSearchText, searchChain] = useState<string>('')
+	const [chainSearchText, searchChain] = useState<string>("");
+
+	const importAbiSourcify = async (chain: Chain) => {
+		// Sourcify.dev
+		const urlPartial = `https://repo.sourcify.dev/contracts/partial_match/${chain.chainId}/${address}/metadata.json`;
+		const urlFull = `https://repo.sourcify.dev/contracts/full_match/${chain.chainId}/${address}/metadata.json`;
+		let data;
+
+		toggleImportStatus(true);
+
+		try {
+			data = await (await fetch(urlFull, {})).json();
+			data = JSON.parse(data);
+		} catch (e1) {
+			try {
+				data = await (await fetch(urlPartial, {})).json();
+				data = JSON.parse(data);
+			} catch (e2) {}
+		}
+
+		if (data?.output?.abi) {
+			const { abi } = data.output;
+			log("abi", abi);
+			onAbiImport(abi);
+
+			toggleImportDialog(false);
+			toggleImportStatus(false);
+		} else {
+			toggleImportStatus(false);
+			onError(`No or invalid ABI received from ${chain.name}`);
+		}
+	};
 
 	const importAbi = useCallback(async () => {
 		if (chain) {
-			const abiUrl = chain.abi?.replace('${ADDRESS}', address)
+			const abiUrl = chain.abi?.replace("${ADDRESS}", address);
 
-			if(abiUrl) {
-
-
-				const [jsonPath, url] = abiUrl?.split(' ') as string[]
+			if (abiUrl) {
+				const [jsonPath, url] = abiUrl?.split(" ") as string[];
 
 				if (jsonPath && url) {
-					let data = ''
+					let data = "";
 					try {
-						toggleImportStatus(true)
+						toggleImportStatus(true);
 
-						data = await (await fetch(url, {
-	
-						})).json()
-	
-						const abiJson = query(data, jsonPath)
+						data = await (await fetch(url, {})).json();
+						const abiJson = query(data, jsonPath);
+						data = abiJson;
+						const abi = JSON.parse(abiJson);
 
-						data = abiJson
+						log("abi", abi);
+						onAbiImport(abi);
 
-						log(data)
-	
-						const abi = JSON.parse(abiJson)
-	
-						log('abi', abi)
-						onAbiImport(abi)
-	
-						toggleImportDialog(false)
-						toggleImportStatus(false)
+						toggleImportDialog(false);
+						toggleImportStatus(false);
 					} catch (error) {
-						toggleImportStatus(false)
-						onError('Invalid ABI received: ' + data)
+						await importAbiSourcify(chain);
 					}
 				}
 			} else {
-				onError(`Unfortunately, importing SmartContract from ${chain.name} is not supported for now`)
+				await importAbiSourcify(chain);
 			}
 		}
-	}, [
-		chain,
-		address
-	])
+	}, [chain, address]);
 
 	return (
 		<>
-			<Tooltip
-				title="You can paste the SmartContract's ABI/Artifact code, an URL of this code, or browse for an ABI/Artiface file from your device."
-				arrow
-				PopperProps={{
-					popperRef,
-					anchorEl: {
-						getBoundingClientRect: () => {
-							return new DOMRect(
-								positionRef.current.x,
-								areaRef.current!.getBoundingClientRect().y + 75,
-								0,
-								0,
-							)
-						},
-					},
-				}}
-			>
-				<TextField
-					inputRef={areaRef}
-					onMouseMove={handleMouseMove}
-					InputProps={{
-						endAdornment: (
-							<>
-								<IconButton
-									aria-label='upload'
-									component='label'
-								>
+			<TextField
+				inputRef={areaRef}
+				onMouseMove={handleMouseMove}
+				InputProps={{
+					endAdornment: (
+						<>
+							<Tooltip
+								title="Paste or browse for an ABI file."
+								arrow
+								PopperProps={{
+									popperRef,
+									anchorEl: {
+										getBoundingClientRect: () => {
+											return new DOMRect(
+												positionRef.current.x,
+												areaRef.current!.getBoundingClientRect().y + 75,
+												0,
+												0
+											);
+										},
+									},
+								}}
+							>
+								<IconButton aria-label="upload" component="label">
 									<UploadFileIcon />
 									<input
 										hidden
-										accept='application/JSON'
-										type='file'
+										accept="application/JSON"
+										type="file"
 										onChange={onFileChange}
 									/>
 								</IconButton>
-							</>
-						),
-					}}
-					margin='normal'
-					value={source}
-					onChange={event => {
-						onSourceChange(event.target.value)
-					}}
-					onKeyUp={event => {
-						if (event.key === 'Enter') {
-							if (source.startsWith('http')) {
-								onUrlChange(source)
-							} else {
-								try {
-									const jsonContent = JSON.parse(source)
-									onJsonChange(jsonContent)
-								} catch (err) {
-									onError(err)
-								}
+							</Tooltip>
+						</>
+					),
+				}}
+				margin="normal"
+				value={source}
+				onChange={(event) => {
+					onSourceChange(event.target.value);
+				}}
+				onKeyUp={(event) => {
+					if (event.key === "Enter") {
+						if (source.startsWith("http")) {
+							onUrlChange(source);
+						} else {
+							try {
+								const jsonContent = JSON.parse(source);
+								onJsonChange(jsonContent);
+							} catch (err) {
+								onError(err);
 							}
 						}
-					}}
-					fullWidth
-					id='file'
-					label='SmartContract ABI'
-					name='file'
-					autoComplete='off'
-					helperText={<>
-						Try an example <Link href='/?json=/UniswapV2.json&address=0x7a250d5630b4cf539739df2c5dacb4c659f2488d&func=getAmountsOut&args.amountIn=0.1e18&args.path=0x1f9840a85d5af5bf1d1762f925bdaddc4201f984, 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2&network=1'>here</Link>, <Link href='/?json=/HelloWorld.json'>here</Link> or <Link sx={{ cursor: 'pointer' }} onClick={() => {
-							toggleImportDialog(true)
-						}}>import it here</Link>
-					</>}
-				/>
+					}
+				}}
+				fullWidth
+				id="file"
+				label="ABI"
+				name="file"
+				autoComplete="off"
+				helperText={
+					<>
+						Try quicklinks:{" "}
+						<Link href="/?json=/uniswapV2Router.json&address=0x965B104e250648d01d4B3b72BaC751Cde809D29E&func=getAmountsIn&network=4337">
+							BeamSwap
+						</Link>
+						,{" "}
+						<Link href="/?json=/weth.json&address=0xD51BFa777609213A653a2CD067c9A0132a2D316A&func=deposit&network=4337">
+							WMC
+						</Link>
+						,{" "}
+						<Link href="/?json=/erc20.json&address=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304&func=transfer&network=4337">
+							USDC
+						</Link>
+						,{" "}
+						<Link href="/?json=/erc721.json&address=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304&func=safeTransferFrom&network=4337">
+							ERC721
+						</Link>
+						,{" "}
+						<Link href="/?json=/erc1155.json&func=safeTransferFrom">
+							ERC1155
+						</Link>
+						.
+						<br />
+						or{" "}
+						<Link
+							sx={{ cursor: "pointer" }}
+							onClick={() => {
+								toggleImportDialog(true);
+							}}
+						>
+							import from contract
+						</Link>
+						.
+					</>
+				}
+			/>
 
-
-			</Tooltip>
-
-			<Dialog TransitionComponent={SlideUpTransition} open={importDialogIsOpen} onClose={closeImportDialog}>
+			<Dialog
+				TransitionComponent={SlideUpTransition}
+				open={importDialogIsOpen}
+				onClose={closeImportDialog}
+			>
 				<DialogTitle>Import SmartContract ABI</DialogTitle>
 				<DialogContent>
 					<DialogContentText>
-						You can import the SmartContract's ABI code by specifying its deployed network and address.
+						You can import the SmartContract's ABI code by specifying its
+						deployed network and address.
 						<br />
 						<br />
 					</DialogContentText>
 					<Grid container spacing={2}>
-						<Grid item
-							xs={12}
-							md={4}
-						>
+						<Grid item xs={12} md={4}>
 							<Autocomplete
 								// disablePortal
 								fullWidth
 								options={chains}
 								getOptionLabel={(option) => option.name}
-								renderInput={(params) => <TextField {...params} label='Network' />}
+								renderInput={(params) => (
+									<TextField {...params} label="Network" />
+								)}
 								value={chain}
 								onChange={(_, newValue: Chain | null) => {
 									if (newValue !== null) {
 										if (!newValue.abi) {
-											onError(`Unfortunately, importing SmartContract from ${newValue.name} is not supported for now`)
-											return
+											onError(
+												`Unfortunately, importing SmartContract from ${newValue.name} is not supported for now`
+											);
+											return;
 										}
 									}
-									onChainChange(newValue)
+									onChainChange(newValue);
 								}}
 								inputValue={chainSearchText}
 								onInputChange={(_, newInputValue) => {
-									searchChain(newInputValue)
+									searchChain(newInputValue);
 								}}
 							/>
 						</Grid>
-						<Grid item
-							xs={12}
-							md={8}
-						>
+						<Grid item xs={12} md={8}>
 							<TextField
 								autoFocus
 								label="Contract's Address"
-								type='text'
+								type="text"
 								fullWidth
 								value={address}
-								onChange={event => onAddressChange(event.target.value)}
+								onChange={(event) => onAddressChange(event.target.value)}
 							/>
 						</Grid>
 					</Grid>
 				</DialogContent>
-				<DialogActions sx={{
-					marginRight: '18px',
-					marginBottom: '10px'
-				}}>
+				<DialogActions
+					sx={{
+						marginRight: "18px",
+						marginBottom: "10px",
+					}}
+				>
 					<Button onClick={closeImportDialog}>Cancel</Button>
-					<LoadingButton loading={isImporting} onClick={importAbi}
-						variant='contained'>Import</LoadingButton>
+					<LoadingButton
+						loading={isImporting}
+						onClick={importAbi}
+						variant="contained"
+					>
+						Import
+					</LoadingButton>
 				</DialogActions>
 			</Dialog>
 		</>
-	)
-}
+	);
+};

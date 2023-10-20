@@ -2,7 +2,6 @@ stages:
   - build
   - pages
 
-
 build:
   stage: build
   image: node:lts
@@ -15,7 +14,7 @@ build:
   artifacts:
     paths:
       - .build/
-    expire_in: 1 day    
+    expire_in: 1 day
   script:
     - export NEXT_TELEMETRY_DISABLED=1
     - ./.ci/build.sh
@@ -33,7 +32,6 @@ pages:
   script:
     - ./.ci/ci-release.sh
     - ls -la public
-
 
   only:
     - main
