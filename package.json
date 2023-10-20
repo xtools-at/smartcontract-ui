@@ -1,6 +1,6 @@
 {
-	"name": "smartcontract-ui",
-	"version": "0.0.1",
+	"name": "@xtools-at/smartcontract-ui",
+	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
 		"@emotion/cache": "latest",
