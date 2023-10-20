@@ -1,5 +1,7 @@
+const config = require("./config/app");
+
 module.exports = {
 	reactStrictMode: true,
-	assetPrefix: process.env.ASSET_PREFIX || "/smartcontract-ui",
-	basePath: "/smartcontract-ui",
+	assetPrefix: config.basePath ? `${config.basePath}/` : "",
+	basePath: config.basePath,
 };

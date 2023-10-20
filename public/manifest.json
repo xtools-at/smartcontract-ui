@@ -2,12 +2,12 @@
 	"name": "Smart Contract UI",
 	"icons": [
 		{
-			"src": "smartcontract-ui/icons/192.png",
+			"src": "/smartcontract-ui/icons/192.png",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "smartcontract-ui/icons/512.png",
+			"src": "/smartcontract-ui/icons/512.png",
 			"type": "image/png",
 			"sizes": "512x512"
 		}

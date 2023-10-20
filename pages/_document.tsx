@@ -2,6 +2,7 @@ import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
 import createEmotionCache from "utils/createEmotionCache";
+import { basePath } from "../config/app";
 
 export default class MyDocument extends Document {
 	render() {
@@ -12,8 +13,12 @@ export default class MyDocument extends Document {
 						rel="stylesheet"
 						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 					/>
-					<link rel="icon" href="/icons/fav.png" type="image/png" />
-					<link rel="manifest" href="/manifest.json" />
+					<link
+						rel="icon"
+						href={`${basePath || ""}/icons/fav.png`}
+						type="image/png"
+					/>
+					<link rel="manifest" href={`${basePath || ""}/manifest.json`} />
 					<script
 						dangerouslySetInnerHTML={{
 							__html: `
@@ -41,7 +46,9 @@ export default class MyDocument extends Document {
 
 					<script
 						dangerouslySetInnerHTML={{
-							__html: `if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/smartcontract-ui/sw.js') }`,
+							__html: `if ('serviceWorker' in navigator) { navigator.serviceWorker.register('${
+								basePath || ""
+							}/sw.js') }`,
 						}}
 					></script>
 				</body>
