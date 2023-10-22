@@ -258,7 +258,9 @@ export const SourceBrowser = ({
 						</Link>
 						,{" "}
 						<Link
-							href={`${basePath || ""}/?json=/erc1155.json&func=uri&args.id=1`}
+							href={`${
+								basePath || ""
+							}/?json=/erc1155.json&func=uri&args.id=1&network=4337`}
 						>
 							ERC1155
 						</Link>
