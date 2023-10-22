@@ -16,9 +16,14 @@
       Open source EVM Smart Contract Tool
     </b>
   </p>
-  <p>
 
+  <p>
+		<span>Try now:&nbsp;</span>
+		<a href="https://xtools-at.github.io/smartcontract-ui" target="_blank">
+			xtools-at.github.io/smartcontract-ui
+		</a>
   </p>
+  <br />
   <br />
   <p>
 
@@ -40,6 +45,7 @@
   - [Select network](#select-network)
   - [Specify contract's address](#specify-contracts-address)
   - [Setting function & arguments to call](#setting-function--arguments-to-call)
+  - [URL params](#url-params)
 - [License](#license)
 
 ---
@@ -100,6 +106,25 @@ In the final step, you can choose which function you want to call, and specify i
 <b>Tip:</b> You can also choose how to sign the call (MetaMask, WalletConnect, ...) by selecting your preferred wallet.
 
 ![Call](./docs/call.png)
+
+### **URL params**
+
+You can set all the above using url params and access any setup with a deeplink:
+
+| Param     | Description                                              | Example                                                                                 |
+| --------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `json`    | Url to load ABI from                                     | `/uniswapV2Router.json`, `/weth.json`, `/erc20.json`, `/erc721.json`, `/erc1155.json`   |
+| `address` | Contract address                                         | `0xD51BFa777609213A653a2CD067c9A0132a2D316A`                                            |
+| `network` | Chain ID of blockchain network                           | `4337`, `13337`, `1`                                                                    |
+| `func`    | Contract method name                                     | `deposit`, `transfer`                                                                   |
+| `args`    | Arguments of function call, must match input name in ABI | `args.id=1`, `args.to=0x0000000000000000000000000000000000000B0b`, `args.amount=0.1e18` |
+| `eth`     | Amount of native token to transfer                       | `0.1e18`                                                                                |
+
+#### Examples
+
+- Check WMC <> USDC price on BeamSwap: [/?json=/uniswapV2Router.json&address=0x965B104e250648d01d4B3b72BaC751Cde809D29E&func=getAmountsIn&network=4337&args.amountOut=0.1e18&args.path=0xD51BFa777609213A653a2CD067c9A0132a2D316A,0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304](https://xtools-at.github.io/smartcontract-ui/?json=/uniswapV2Router.json&address=0x965B104e250648d01d4B3b72BaC751Cde809D29E&func=getAmountsIn&network=4337&args.amountOut=0.1e18&args.path=0xD51BFa777609213A653a2CD067c9A0132a2D316A,0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304)
+- Wrap 0.1 MC into WMC: [/?json=/weth.json&address=0xD51BFa777609213A653a2CD067c9A0132a2D316A&func=deposit&eth=0.1e18&network=4337](https://xtools-at.github.io/smartcontract-ui/?json=/weth.json&address=0xD51BFa777609213A653a2CD067c9A0132a2D316A&func=deposit&eth=0.1e18&network=4337)
+- Transfer 100 USDC: [/?json=/erc20.json&address=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304&func=transfer&args.amount=100e6&network=4337](https://xtools-at.github.io/?json=/erc20.json&address=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304&func=transfer&args.amount=100e6&network=4337)
 
 ## **License**
 
