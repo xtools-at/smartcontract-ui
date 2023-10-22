@@ -220,7 +220,7 @@ export const SourceBrowser = ({
 						<Link
 							href={`${
 								basePath || ""
-							}/?json=/uniswapV2Router.json&address=0x965B104e250648d01d4B3b72BaC751Cde809D29E&func=getAmountsIn&network=4337&args.amountOut=0.1e18&args.path=0xD51BFa777609213A653a2CD067c9A0132a2D316A,0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304`}
+							}/?json=/uniswapV2Router.json&address=0x965B104e250648d01d4B3b72BaC751Cde809D29E&func=getAmountsIn&network=4337&args.amountOut=1e18&args.path=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304,0xD51BFa777609213A653a2CD067c9A0132a2D316A`}
 						>
 							BeamSwap
 						</Link>
