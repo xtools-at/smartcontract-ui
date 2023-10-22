@@ -2,7 +2,7 @@ import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
 import createEmotionCache from "utils/createEmotionCache";
-import { basePath } from "../config/app";
+import { basePath, host } from "../config/app";
 
 export default class MyDocument extends Document {
 	render() {
@@ -57,7 +57,7 @@ export default class MyDocument extends Document {
               {
                 '@context': 'https://schema.org',
                 '@type': 'WebSite',
-                'url': 'https://xtools-at.github.io/smartcontract-ui'
+                'url': '${host}${basePath || ""}'
               }`,
 						}}
 					></script>

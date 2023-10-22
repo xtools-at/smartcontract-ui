@@ -287,8 +287,8 @@ export default function Page() {
 		if (url) {
 			(async () => {
 				const abiUrl = url.startsWith("/")
-					? `${basePath ? `${basePath}/` : ""}${url}`
-					: url;
+					? `${basePath || ""}${url}`
+					: decodeURIComponent(url);
 				try {
 					const jsonContent = await (await fetch(abiUrl)).json();
 
