@@ -43,7 +43,7 @@ import { log, warn, fatal } from "utils/logger";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { signers } from "config/signers";
 import { Signer } from "types/Signer";
-import { basePath, name } from "../config/app";
+import { basePath, name, iframeUrl, backgroundUrl } from "../config/app";
 
 export default function Page() {
 	// snackbar
@@ -780,28 +780,38 @@ export default function Page() {
 	// global.BigNumber = BigNumber
 	// global.multiplyDecimals = multiplyDecimals
 
+	const style = backgroundUrl
+		? {
+				backgroundImage: `url(${backgroundUrl})`,
+				backgroundRepeat: "no-repeat",
+				backgroundColor: (t) =>
+					t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+		  }
+		: {
+				display: { xs: "none", sm: "block" },
+		  };
+
+	const iframe = iframeUrl ? (
+		<iframe
+			src={iframeUrl}
+			scrolling="no"
+			style={{
+				width: "100%",
+				height: "100%",
+				overflow: "hidden",
+				border: 0,
+			}}
+		/>
+	) : null;
+
 	return (
 		<>
 			<Grid container component="main" sx={{ height: "100vh" }}>
 				<CssBaseline />
-				<Grid
-					item
-					xs={false}
-					sm={4}
-					md={6}
-					lg={7}
-					sx={{ display: { xs: "none", sm: "block" } }}
-				>
-					<iframe
-						src="https://onbeam.com"
-						scrolling="no"
-						style={{
-							width: "100%",
-							height: "100%",
-							overflow: "hidden",
-							border: 0,
-						}}
-					/>
+				<Grid item xs={false} sm={4} md={6} lg={7} sx={style}>
+					{iframe}
 				</Grid>
 				<Grid
 					item

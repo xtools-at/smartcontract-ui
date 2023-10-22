@@ -6,4 +6,6 @@ module.exports = {
 	host: "https://xtools-at.github.io",
 	corsProxyUrlPrefix: "https://corsproxy.io/?",
 	creatorTwitter: "@xtools_",
+	backgroundUrl: "",
+	iframeUrl: "https://onbeam.com", // set to "" to use background image
 };
