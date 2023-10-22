@@ -225,9 +225,25 @@ export const SourceBrowser = ({
 						<Link
 							href={`${
 								basePath || ""
-							}/?json=/uniswapV2Router.json&address=0x965B104e250648d01d4B3b72BaC751Cde809D29E&func=getAmountsIn&network=4337&args.amountOut=1e18&args.path=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304,0xD51BFa777609213A653a2CD067c9A0132a2D316A`}
+							}/?json=/erc20.json&address=0x00E69e0b6014d77040b28E04F2b8ac25A6EA5d34&func=transfer&args.amount=10e18&network=4337`}
 						>
-							BeamSwap
+							ERC20
+						</Link>
+						,{" "}
+						<Link
+							href={`${
+								basePath || ""
+							}/?json=/erc721.json&address=0x6702e778780AD5f0d1C1C53E367971B1ad3FD223&func=name&network=4337`}
+						>
+							ERC721
+						</Link>
+						,{" "}
+						<Link
+							href={`${
+								basePath || ""
+							}/?json=/erc1155.json&func=uri&args.id=1&network=4337`}
+						>
+							ERC1155
 						</Link>
 						,{" "}
 						<Link
@@ -249,25 +265,9 @@ export const SourceBrowser = ({
 						<Link
 							href={`${
 								basePath || ""
-							}/?json=/erc20.json&address=0x00E69e0b6014d77040b28E04F2b8ac25A6EA5d34&func=transfer&args.amount=10e18&network=4337`}
+							}/?json=/uniswapV2Router.json&address=0x965B104e250648d01d4B3b72BaC751Cde809D29E&func=getAmountsIn&network=4337&args.amountOut=1e18&args.path=0x76BF5E7d2Bcb06b1444C0a2742780051D8D0E304,0xD51BFa777609213A653a2CD067c9A0132a2D316A`}
 						>
-							ERC20
-						</Link>
-						,{" "}
-						<Link
-							href={`${
-								basePath || ""
-							}/?json=/erc721.json&address=0x6702e778780AD5f0d1C1C53E367971B1ad3FD223&func=name&network=4337`}
-						>
-							ERC721
-						</Link>
-						,{" "}
-						<Link
-							href={`${
-								basePath || ""
-							}/?json=/erc1155.json&func=uri&args.id=1&network=4337`}
-						>
-							ERC1155
+							BeamSwap
 						</Link>
 						.
 						<br />
