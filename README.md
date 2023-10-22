@@ -144,6 +144,8 @@ via Github Actions & Pages:
 - the build process pushes the build artifact to `main-build`
 - setup Github Pages to serve a static site from `main-build`
 
+In case of build issues, delete all Github Actions caches and the `main-build` branch, then re-run the job _"Deploy to Pages"_.
+
 ## **License**
 
 This project is licensed under the [GNU General Public License v3.0](https://opensource.org/licenses/gpl-3.0.html) - see the [`COPYING`](COPYING) file for details.

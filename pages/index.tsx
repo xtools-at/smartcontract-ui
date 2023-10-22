@@ -784,7 +784,7 @@ export default function Page() {
 		? {
 				backgroundImage: `url(${backgroundUrl})`,
 				backgroundRepeat: "no-repeat",
-				backgroundColor: (t) =>
+				backgroundColor: (t: any) =>
 					t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
 				backgroundSize: "cover",
 				backgroundPosition: "center",
