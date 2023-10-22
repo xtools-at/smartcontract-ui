@@ -152,6 +152,19 @@ export const SourceBrowser = ({
 		}
 	}, [chain, address]);
 
+	const onAbiChange = useCallback(async () => {
+		if (source.startsWith("http") || source.startsWith("/")) {
+			onUrlChange(source);
+		} else {
+			try {
+				const jsonContent = JSON.parse(source);
+				onJsonChange(jsonContent);
+			} catch (err) {
+				onError(err);
+			}
+		}
+	}, [source]);
+
 	return (
 		<>
 			<TextField
@@ -197,18 +210,10 @@ export const SourceBrowser = ({
 				}}
 				onKeyUp={(event) => {
 					if (event.key === "Enter") {
-						if (source.startsWith("http")) {
-							onUrlChange(source);
-						} else {
-							try {
-								const jsonContent = JSON.parse(source);
-								onJsonChange(jsonContent);
-							} catch (err) {
-								onError(err);
-							}
-						}
+						onAbiChange();
 					}
 				}}
+				onBlur={onAbiChange}
 				fullWidth
 				id="file"
 				label="ABI"
