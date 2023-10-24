@@ -98,6 +98,29 @@ export const ResultDialog = ({
 											const output = [];
 
 											for (let key in args) {
+												if (key === "_isBigNumber") {
+													continue;
+												}
+
+												if (key === "_hex") {
+													const bnString = BigNumber.from(args[key]).toString();
+
+													output.push(
+														<ListItemButton
+															sx={{
+																overflow: "auto",
+															}}
+															key={"BigNumber"}
+															onClick={() => copyText(bnString)}
+														>
+															<ListItemText
+																primary={bnString}
+																secondary={"BigNumber"}
+															/>
+														</ListItemButton>
+													);
+												}
+
 												output.push(
 													<ListItemButton
 														sx={{
