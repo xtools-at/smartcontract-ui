@@ -12,6 +12,8 @@ fileNames.forEach((fileName) => {
 
 		if (
 			chain.status !== "deprecated" &&
+			chain.status !== "incubating" &&
+			chain.status !== "yolo" &&
 			chain.rpc &&
 			chain.rpc.length > 0 /* &&
 			chain.chainId === chain.networkId */
@@ -26,7 +28,7 @@ fileNames.forEach((fileName) => {
 const chains = [];
 const sortMap = {};
 rawChains
-	.sort((a, b) => (a.chainId < b.chainId ? -1 : 1))
+	.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1))
 	.forEach((chain) => {
 		if (config.chainOrder.includes(chain.chainId)) {
 			sortMap[chain.chainId] = chain;

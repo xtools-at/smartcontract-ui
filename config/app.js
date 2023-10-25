@@ -43,31 +43,5 @@ module.exports = {
 		59144, 59140,
 		// zk sync
 		280, 324,
-		// Polygon ZK
-		1101, 1442,
-		// Gnosis
-		100, 10200,
-		// Flare
-		14, 16, 114,
-		// CRO
-		25, 338,
-		// Klaytn
-		8217, 1001,
-		// Moonbase, Moonriver
-		1284, 1285, 1287,
-		// Celo
-		42220, 44787,
-		// Aurora (NEAR)
-		1313161554, 1313161555,
-		// PulseChain
-		369, 943,
-		// OKX
-		66, 65,
-		// opBNB
-		204, 5611,
-		// Meter
-		82, 83,
-		// Metis
-		1088, 588, 599,
 	],
 };

@@ -60,7 +60,7 @@ Live version of frontend available at [xtools-at.github.io/smartcontract-ui](htt
 
 ### **Features**
 
-- Discover millions deployed Smart Contracts across over 900 blockchains.
+- Discover millions deployed Smart Contracts across over 1000 blockchains.
 - Easy to read and write Smart Contract's data with a friendly UI.
 - Sign your request in many ways: with Browser using Metamask Wallet, Binance Wallet, or with TrustWallet's WalletConnect protocol, Coinbase's WalletLink protocol, or importing your wallet from key.
 - <b>Offline-First: </b> You can use it anywhere, even without a network connection.

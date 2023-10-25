@@ -30,18 +30,20 @@ export const useIframeUrl = () => {
 			// find working explorer
 			let skip = !chainExplorerIframe.includes(chain.chainId);
 			let explorer = chain.explorers[0];
-			chain.explorers.forEach((exp) => {
-				const loName = exp.name?.toLowerCase();
-				if (
-					loName &&
-					(loName.includes("dexguru") ||
-						loName.includes("blockscout") ||
-						loName.includes("subscan"))
-				) {
-					explorer = exp;
-					skip = false;
-				}
-			});
+			if (skip) {
+				chain.explorers.forEach((exp) => {
+					const loName = exp.name?.toLowerCase();
+					if (
+						loName &&
+						(loName.includes("dexguru") ||
+							loName.includes("blockscout") ||
+							loName.includes("subscan"))
+					) {
+						explorer = exp;
+						skip = false;
+					}
+				});
+			}
 
 			// skip if not working
 			if (skip) {
