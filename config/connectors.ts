@@ -12,19 +12,20 @@ import { WalletLinkConnector } from "@web3-react/walletlink-connector";
 // import { RpcUrlMap } from 'types/Chain'
 
 import { chainIds, rpcs } from "config/chains";
+import { defaultChainId } from "config/app";
 
 export const injected = new InjectedConnector({ supportedChainIds: chainIds });
 
 export const anonymous = new NetworkConnector({
 	urls: rpcs,
 	supportedChainIds: chainIds,
-	defaultChainId: 1,
+	defaultChainId,
 });
 
 export const key = new NetworkConnector({
 	urls: rpcs,
 	supportedChainIds: chainIds,
-	defaultChainId: 1,
+	defaultChainId,
 });
 
 export const walletconnect = new WalletConnectConnector({

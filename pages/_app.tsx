@@ -26,7 +26,7 @@ interface MyAppProps extends AppProps {
 
 const getWeb3Library = (provider: any): Web3Provider => {
 	const library = new Web3Provider(provider);
-	library.pollingInterval = 12000;
+	library.pollingInterval = 5000;
 	return library;
 };
 
