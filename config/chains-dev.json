@@ -19,8 +19,9 @@
 		"explorers": [
 			{
 				"name": "Beam Explorer",
-				"url": "https://subnets.avax.network/beam/",
-				"standard": "none"
+				"url": "https://subnets.avax.network/beam",
+				"standard": "none",
+				"iframe": true
 			}
 		]
 	},
@@ -44,8 +45,9 @@
 		"explorers": [
 			{
 				"name": "Beam Testnet Explorer",
-				"url": "https://subnets-test.avax.network/beam/",
-				"standard": "none"
+				"url": "https://subnets-test.avax.network/beam",
+				"standard": "none",
+				"iframe": true
 			}
 		]
 	},
@@ -523,7 +525,7 @@
 			{
 				"name": "etherscan",
 				"url": "https://optimistic.etherscan.io",
-				"standard": "none"
+				"standard": "EIP3091"
 			}
 		]
 	},
@@ -1464,7 +1466,8 @@
 			{
 				"name": "Meter Mainnet Scan",
 				"url": "https://scan.meter.io",
-				"standard": "EIP3091"
+				"standard": "EIP3091",
+				"iframe": true
 			}
 		]
 	},
@@ -1487,7 +1490,8 @@
 			{
 				"name": "Meter Testnet Scan",
 				"url": "https://scan-warringstakes.meter.io",
-				"standard": "EIP3091"
+				"standard": "EIP3091",
+				"iframe": true
 			}
 		]
 	},
@@ -1509,7 +1513,8 @@
 			{
 				"name": "GateScan",
 				"url": "https://www.gatescan.org/testnet",
-				"standard": "EIP3091"
+				"standard": "EIP3091",
+				"iframe": true
 			}
 		],
 		"infoURL": "https://www.gatechain.io"
@@ -1532,7 +1537,8 @@
 			{
 				"name": "GateScan",
 				"url": "https://www.gatescan.org",
-				"standard": "EIP3091"
+				"standard": "EIP3091",
+				"iframe": true
 			}
 		],
 		"infoURL": "https://www.gatechain.io"

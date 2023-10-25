@@ -18,6 +18,7 @@ export type ChainExplorer = {
 	name: string;
 	url: string;
 	standard: string;
+	iframe?: boolean;
 };
 
 export type RpcUrlMap = {

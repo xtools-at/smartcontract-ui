@@ -43,11 +43,14 @@ import { log, warn, fatal } from "utils/logger";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { signers } from "config/signers";
 import { Signer } from "types/Signer";
-import { basePath, name, iframeUrl, backgroundUrl } from "../config/app";
+import { basePath, name, backgroundUrl } from "../config/app";
+import { useIframeUrl } from "hooks/useIframeUrl";
 
 export default function Page() {
 	// snackbar
 	const { enqueueSnackbar } = useSnackbar();
+
+	const { iframeUrl, updateIframeUrl } = useIframeUrl();
 
 	// Error feedback
 	const showError = useCallback((error) => {
@@ -234,6 +237,7 @@ export default function Page() {
 			const chain = chains.find((chain) => chain.chainId == w3React.chainId);
 			if (chain) {
 				selectChain(chain);
+				updateIframeUrl(chain, address, null);
 
 				if (w3React.connector === anonymous) {
 					setSigner(signers[0]);
@@ -382,8 +386,13 @@ export default function Page() {
 	const [selectedChain, selectChain] = useState<Chain | null | undefined>(null);
 	const [signer, setSigner] = useState<Signer>(signers[0]);
 
-	const [address, setAddress] = useState("");
+	const [address, setAddressValue] = useState("");
 	const [paramsAreLocked, toggleParamsLock] = useState<boolean>(false);
+
+	const setAddress = (address: string) => {
+		setAddressValue(address);
+		updateIframeUrl(selectedChain, address, null);
+	};
 
 	const selectSigner = useCallback(
 		async (signer: Signer, data?: any) => {
@@ -760,6 +769,8 @@ export default function Page() {
 			});
 			toggleResultDialog(true);
 
+			updateIframeUrl(selectedChain, address, writeResult.transactionHash);
+
 			toggleWriting(false);
 		} catch (err: any) {
 			toggleWriting(false);
@@ -780,27 +791,30 @@ export default function Page() {
 	// global.BigNumber = BigNumber
 	// global.multiplyDecimals = multiplyDecimals
 
-	const style = backgroundUrl
-		? {
-				backgroundImage: `url(${backgroundUrl})`,
-				backgroundRepeat: "no-repeat",
-				backgroundColor: (t: any) =>
-					t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
-				backgroundSize: "cover",
-				backgroundPosition: "center",
-		  }
-		: {
-				display: { xs: "none", sm: "block" },
-		  };
+	const style =
+		backgroundUrl && !iframeUrl
+			? {
+					backgroundImage: `url(${backgroundUrl})`,
+					backgroundRepeat: "no-repeat",
+					backgroundColor: (t: any) =>
+						t.palette.mode === "light"
+							? t.palette.grey[50]
+							: t.palette.grey[900],
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+			  }
+			: {
+					display: { xs: "none", sm: "block" },
+			  };
 
 	const iframe = iframeUrl ? (
 		<iframe
 			src={iframeUrl}
-			scrolling="no"
 			style={{
 				width: "100%",
 				height: "100%",
-				overflow: "hidden",
+				// overflow: "hidden",
+				// scrolling="no"
 				border: 0,
 			}}
 		/>
