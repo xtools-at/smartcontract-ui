@@ -817,6 +817,7 @@ export default function Page() {
 				// scrolling="no"
 				border: 0,
 			}}
+			onError={() => updateIframeUrl(null, null, null)}
 		/>
 	) : null;
 

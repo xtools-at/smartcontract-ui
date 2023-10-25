@@ -13,7 +13,13 @@ module.exports = {
 
 	// chains
 	defaultChainId: 4337,
-	chainExplorerIframe: [4337, 13337, 82, 83],
+	chainExplorerIframe: [
+		4337, 13337, 82, 83, 338, 1001, 1313161554, 1313161555, 369, 943, 1088, 588,
+		599, 19, 20, 21,
+	],
+	chainExplorerIframeBlacklist: [
+		1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 420, 11155111, 10200,
+	],
 	chainOrder: [
 		// Beam
 		4337, 13337,
@@ -39,6 +45,10 @@ module.exports = {
 		280, 324,
 		// Polygon ZK
 		1101, 1442,
+		// Gnosis
+		100, 10200,
+		// Flare
+		14, 16, 114,
 		// CRO
 		25, 338,
 		// Klaytn
