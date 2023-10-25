@@ -12,6 +12,7 @@ on:
       - "README.md"
       - "COPYING"
       - "docs/**"
+      - ".vscode/**"
 
 jobs:
   build-push:
