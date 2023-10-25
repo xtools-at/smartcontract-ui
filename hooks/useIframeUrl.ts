@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { iframeUrl as baseIframeUrl } from "config/app";
+import { iframeUrl as baseIframeUrl, chainExplorerIframe } from "config/app";
 import { Chain } from "types/Chain";
 
 export const useIframeUrl = () => {
@@ -13,8 +13,7 @@ export const useIframeUrl = () => {
 		if (
 			baseIframeUrl &&
 			chain?.explorers?.length &&
-			(chain.explorers[0].standard === "none" ||
-				chain.explorers[0].iframe === true)
+			chainExplorerIframe.includes(chain.chainId)
 		) {
 			let url = `${chain.explorers[0].url}${txHash ? `/tx/${txHash}` : ""}`;
 			if (url.endsWith("/")) url = url.substring(0, url.length - 1);

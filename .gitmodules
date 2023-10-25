@@ -1,0 +1,3 @@
+[submodule "config/chainlist"]
+	path = config/chainlist
+	url = https://github.com/ethereum-lists/chains.git

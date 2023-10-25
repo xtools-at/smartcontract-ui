@@ -1,5 +1,48 @@
 const fs = require("fs");
-const chains = require(__dirname + "/../config/chains-dev.json");
+const path = require("path");
+const config = require("../config/app");
+
+const rawChains = [];
+const folderPath = path.resolve(__dirname, "../config/chainlist/_data/chains");
+const fileNames = fs.readdirSync(folderPath);
+fileNames.forEach((fileName) => {
+	try {
+		const filePath = path.resolve(folderPath, fileName);
+		const chain = JSON.parse(fs.readFileSync(filePath, { encoding: "utf-8" }));
+
+		if (
+			chain.status !== "deprecated" &&
+			chain.rpc &&
+			chain.rpc.length > 0 /* &&
+			chain.chainId === chain.networkId */
+		) {
+			if (chain.title && chain.title.length < 50) chain.name = chain.title;
+
+			rawChains.push(chain);
+		}
+	} catch (e) {}
+});
+
+const chains = [];
+const sortMap = {};
+rawChains
+	.sort((a, b) => (a.chainId < b.chainId ? -1 : 1))
+	.forEach((chain) => {
+		if (config.chainOrder.includes(chain.chainId)) {
+			sortMap[chain.chainId] = chain;
+		} else {
+			chains.push(chain);
+		}
+	});
+config.chainOrder.reverse().forEach((chainId) => {
+	if (sortMap[chainId]) {
+		chains.unshift(sortMap[chainId]);
+	}
+});
+
+console.log(
+	`>> buildChainList: building ${chains.length}/${fileNames.length} chainlist networks`
+);
 
 const {
 	INFURA_API_KEY,

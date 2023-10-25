@@ -36,10 +36,11 @@
 		"use-immer": "^0.6.0"
 	},
 	"scripts": {
-		"dev": "yarn prebuild && (local-ssl-proxy --source 3443 --target 3000) & next",
-		"prebuild": "node scripts/buildChainList",
-		"build": "yarn prebuild && next build && next export",
-		"start": "next start"
+		"dev": "yarn chainlist:build && (local-ssl-proxy --source 3443 --target 3000) & next",
+		"build": "yarn chainlist:build && next build && next export",
+		"start": "next start",
+		"chainlist:build": "node scripts/buildChainList",
+		"chainlist:update": "git submodule update --init --remote --recursive && yarn chainlist:build"
 	},
 	"devDependencies": {
 		"@types/md5": "^2.3.1",
