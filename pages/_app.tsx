@@ -44,6 +44,8 @@ export default function App(props: MyAppProps) {
 		[prefersDarkMode]
 	);
 
+	const baseUrl = `${host}${basePath || ""}`;
+
 	return (
 		<CacheProvider value={emotionCache}>
 			<Head>
@@ -55,11 +57,8 @@ export default function App(props: MyAppProps) {
 				/>
 				<meta property="og:site_name" content={name} />
 				<meta property="og:title" content={title} />
-				<meta property="og:url" content={`${host}${basePath}`} />
-				<meta
-					property="og:image"
-					content={`${host}${basePath}/icons/512-maskable.png`}
-				/>
+				<meta property="og:url" content={baseUrl} />
+				<meta property="og:image" content={`${baseUrl}/icons/banner.png`} />
 				<meta property="og:description" content={description} />
 				<meta property="og:type" content="website" />
 				<meta property="og:locale" content="en" />
@@ -68,7 +67,7 @@ export default function App(props: MyAppProps) {
 				<meta name="twitter:description" content={description} />
 				<meta
 					name="twitter:image:src"
-					content={`${host}${basePath}/icons/512-maskable.png`}
+					content={`${baseUrl}/icons/512-maskable.png`}
 				/>
 				<meta name="twitter:creator" content={creatorTwitter} />
 			</Head>
