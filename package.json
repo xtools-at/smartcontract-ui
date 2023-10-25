@@ -40,7 +40,7 @@
 		"build": "next build && next export",
 		"start": "next start",
 		"chainlist:build": "node scripts/buildChainList",
-		"chainlist:update": "git submodule update --init --remote --recursive && yarn chainlist:build"
+		"chainlist:update": "git submodule update --init --remote && yarn chainlist:build"
 	},
 	"devDependencies": {
 		"@types/md5": "^2.3.1",
