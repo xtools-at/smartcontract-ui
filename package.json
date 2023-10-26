@@ -36,11 +36,13 @@
 		"use-immer": "^0.6.0"
 	},
 	"scripts": {
-		"dev": "yarn chainlist && (local-ssl-proxy --source 3443 --target 3000) & next",
+		"dev": "yarn prebuild && (local-ssl-proxy --source 3443 --target 3000) & next",
 		"build": "next build && next export",
 		"start": "next start",
+		"prebuild": "yarn chainlist",
 		"chainlist": "node scripts/buildChainList",
-		"chainlist:update": "git submodule update --init --remote && yarn chainlist"
+		"chainlist:update": "git submodule update --init --remote && yarn prebuild",
+		"explorer:update": "node scripts/getExplorerInfo"
 	},
 	"devDependencies": {
 		"@types/md5": "^2.3.1",
@@ -49,6 +51,7 @@
 		"@types/react-dom": "latest",
 		"@types/react-syntax-highlighter": "^13.5.2",
 		"local-ssl-proxy": "^1.3.0",
+		"node-fetch": "^2.6.1",
 		"typescript": "latest"
 	}
 }

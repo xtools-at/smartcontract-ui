@@ -4,4 +4,7 @@ module.exports = {
 	reactStrictMode: true,
 	assetPrefix: config.basePath ? `${config.basePath}/` : "",
 	basePath: config.basePath || "/",
+	async redirects() {
+		return [];
+	},
 };

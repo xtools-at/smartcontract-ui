@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-	iframeUrl as baseIframeUrl,
-	chainExplorerIframe,
-	chainExplorerIframeBlacklist,
-} from "config/app";
+import { iframeUrl as baseIframeUrl } from "config/app";
 import { Chain } from "types/Chain";
 
 export const useIframeUrl = () => {
@@ -21,32 +17,8 @@ export const useIframeUrl = () => {
 		txHash: string | null | undefined
 	) => {
 		if (baseIframeUrl && chain?.explorers?.length) {
-			// blacklist
-			if (chainExplorerIframeBlacklist.includes(chain.chainId)) {
-				reset();
-				return;
-			}
-
-			// find working explorer
-			let skip = !chainExplorerIframe.includes(chain.chainId);
-			let explorer = chain.explorers[0];
-			if (skip) {
-				chain.explorers.forEach((exp) => {
-					const loName = exp.name?.toLowerCase();
-					if (
-						loName &&
-						(loName.includes("dexguru") ||
-							loName.includes("blockscout") ||
-							loName.includes("subscan"))
-					) {
-						explorer = exp;
-						skip = false;
-					}
-				});
-			}
-
-			// skip if not working
-			if (skip) {
+			const explorer = chain.explorers.find((exp) => exp.iframe === true);
+			if (!explorer) {
 				reset();
 				return;
 			}

@@ -13,13 +13,6 @@ module.exports = {
 
 	// chains
 	defaultChainId: 4337,
-	chainExplorerIframe: [
-		4337, 13337, 82, 83, 338, 1001, 1313161554, 1313161555, 369, 943, 1088, 588,
-		599, 19, 20, 21,
-	],
-	chainExplorerIframeBlacklist: [
-		1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 420, 11155111, 10200,
-	],
 	chainOrder: [
 		// Beam
 		4337, 13337,
