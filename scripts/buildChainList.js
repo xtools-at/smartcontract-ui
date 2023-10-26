@@ -98,6 +98,7 @@ const main = async () => {
 			chainId: chain.chainId,
 			explorers: chain.explorers,
 			abi: chain.abi,
+			shortName: chain.shortName,
 		};
 
 		if (chainsAbiApi[chain.chainId] !== void 0) {
@@ -127,13 +128,16 @@ const main = async () => {
 
 	fs.writeFileSync(
 		__dirname + "/../config/chains.json",
-		JSON.stringify(chains)
+		JSON.stringify(chains, null, 2)
 	);
 	fs.writeFileSync(
 		__dirname + "/../config/chainIds.json",
-		JSON.stringify(chainIds)
+		JSON.stringify(chainIds, null, 2)
 	);
-	fs.writeFileSync(__dirname + "/../config/rpcs.json", JSON.stringify(rpcs));
+	fs.writeFileSync(
+		__dirname + "/../config/rpcs.json",
+		JSON.stringify(rpcs, null, 2)
+	);
 };
 
 main();

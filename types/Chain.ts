@@ -6,6 +6,7 @@ export type Chain = {
 	chainId: number;
 	explorers: ChainExplorer[];
 	abi?: string;
+	shortName?: string;
 };
 
 export type ChainCurrency = {
