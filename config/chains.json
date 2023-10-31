@@ -2,12 +2,15 @@
   {
     "name": "Beam",
     "rpc": [
-      "https://subnets.avax.network/beam/mainnet/rpc"
+      "https://subnets.avax.network/beam/mainnet/rpc",
+      "wss://subnets.avax.network/beam/mainnet/ws"
     ],
-    "faucets": [],
+    "faucets": [
+      "https://faucet.onbeam.com"
+    ],
     "nativeCurrency": {
-      "name": "Merit Circle",
-      "symbol": "MC",
+      "name": "Beam",
+      "symbol": "BEAM",
       "decimals": 18
     },
     "chainId": 4337,
@@ -24,12 +27,16 @@
   {
     "name": "Beam Testnet",
     "rpc": [
-      "https://subnets.avax.network/beam/testnet/rpc"
+      "https://subnets.avax.network/beam/testnet/rpc",
+      "wss://subnets.avax.network/beam/testnet/ws"
     ],
-    "faucets": [],
+    "faucets": [
+      "https://faucet.avax.network/?subnet=beam",
+      "https://faucet.onbeam.com"
+    ],
     "nativeCurrency": {
-      "name": "Merit Circle",
-      "symbol": "MC",
+      "name": "Beam",
+      "symbol": "BEAM",
       "decimals": 18
     },
     "chainId": 13337,
@@ -76,17 +83,17 @@
         "standard": "EIP3091"
       },
       {
+        "name": "blockscout",
+        "url": "https://eth.blockscout.com",
+        "icon": "blockscout",
+        "standard": "EIP3091"
+      },
+      {
         "name": "dexguru",
         "url": "https://ethereum.dex.guru",
         "icon": "dexguru",
         "standard": "EIP3091",
         "iframe": true
-      },
-      {
-        "name": "blockscout",
-        "url": "https://eth.blockscout.com",
-        "icon": "blockscout",
-        "standard": "EIP3091"
       }
     ],
     "abi": "result https://api.etherscan.io/api?module=contract&action=getabi&address=${ADDRESS}&apikey=HW16AN9RVY8BJFBZ3YCKYPY9YJ9934EU7Z",
@@ -116,14 +123,14 @@
     "chainId": 5,
     "explorers": [
       {
-        "name": "blockscout-goerli",
-        "url": "https://eth-goerli.blockscout.com",
-        "icon": "blockscout",
+        "name": "etherscan-goerli",
+        "url": "https://goerli.etherscan.io",
         "standard": "EIP3091"
       },
       {
-        "name": "etherscan-goerli",
-        "url": "https://goerli.etherscan.io",
+        "name": "blockscout-goerli",
+        "url": "https://eth-goerli.blockscout.com",
+        "icon": "blockscout",
         "standard": "EIP3091"
       }
     ],
@@ -375,17 +382,17 @@
     "chainId": 250,
     "explorers": [
       {
+        "name": "ftmscan",
+        "url": "https://ftmscan.com",
+        "icon": "ftmscan",
+        "standard": "EIP3091"
+      },
+      {
         "name": "dexguru",
         "url": "https://fantom.dex.guru",
         "icon": "dexguru",
         "standard": "EIP3091",
         "iframe": true
-      },
-      {
-        "name": "ftmscan",
-        "url": "https://ftmscan.com",
-        "icon": "ftmscan",
-        "standard": "EIP3091"
       }
     ],
     "abi": "result https://api.ftmscan.com/api?module=contract&action=getabi&address=${ADDRESS}&apikey=AT79A7U8Z6G73VXYVDBXH2R1ICDB65SC25",
@@ -555,17 +562,17 @@
         "standard": "EIP3091"
       },
       {
+        "name": "blockscout",
+        "url": "https://optimism.blockscout.com",
+        "icon": "blockscout",
+        "standard": "EIP3091"
+      },
+      {
         "name": "dexguru",
         "url": "https://optimism.dex.guru",
         "icon": "dexguru",
         "standard": "EIP3091",
         "iframe": true
-      },
-      {
-        "name": "blockscout",
-        "url": "https://optimism.blockscout.com",
-        "icon": "blockscout",
-        "standard": "EIP3091"
       }
     ],
     "abi": "result https://api-optimistic.etherscan.io/api?module=contract&action=getabi&address=${ADDRESS}&apikey=HW16AN9RVY8BJFBZ3YCKYPY9YJ9934EU7Z",
@@ -616,13 +623,6 @@
     "chainId": 8453,
     "explorers": [
       {
-        "name": "dexguru",
-        "url": "https://base.dex.guru",
-        "icon": "dexguru",
-        "standard": "EIP3091",
-        "iframe": true
-      },
-      {
         "name": "basescout",
         "url": "https://base.blockscout.com",
         "icon": "blockscout",
@@ -632,6 +632,13 @@
         "name": "basescan",
         "url": "https://basescan.org",
         "standard": "none"
+      },
+      {
+        "name": "dexguru",
+        "url": "https://base.dex.guru",
+        "icon": "dexguru",
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "base"
@@ -656,13 +663,6 @@
     "chainId": 84531,
     "explorers": [
       {
-        "name": "dexguru",
-        "url": "https://base-goerli.dex.guru",
-        "icon": "dexguru",
-        "standard": "EIP3091",
-        "iframe": true
-      },
-      {
         "name": "basescan",
         "url": "https://goerli.basescan.org",
         "standard": "none"
@@ -672,6 +672,13 @@
         "url": "https://base-goerli.blockscout.com",
         "icon": "blockscout",
         "standard": "EIP3091"
+      },
+      {
+        "name": "dexguru",
+        "url": "https://base-goerli.dex.guru",
+        "icon": "dexguru",
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "basegor"
@@ -715,17 +722,17 @@
     "chainId": 59144,
     "explorers": [
       {
+        "name": "Etherscan",
+        "url": "https://lineascan.build",
+        "standard": "EIP3091",
+        "icon": "linea"
+      },
+      {
         "name": "L2scan",
         "url": "https://linea.l2scan.co",
         "standard": "EIP3091",
         "icon": "linea",
         "iframe": true
-      },
-      {
-        "name": "Etherscan",
-        "url": "https://lineascan.build",
-        "standard": "EIP3091",
-        "icon": "linea"
       },
       {
         "name": "Blockscout",
@@ -1039,7 +1046,8 @@
       {
         "name": "Polkadot.js",
         "url": "https://polkadot.js.org/apps/?rpc=wss://wsspc1-qa.agung.peaq.network#/explorer",
-        "standard": "none"
+        "standard": "none",
+        "iframe": true
       }
     ],
     "shortName": "AGNG"
@@ -1496,6 +1504,28 @@
       }
     ],
     "shortName": "ASAR"
+  },
+  {
+    "name": "AmStar Testnet",
+    "rpc": [
+      "https://testnet-rpc.amstarscan.com"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "SINSO",
+      "symbol": "SINSO",
+      "decimals": 18
+    },
+    "chainId": 1138,
+    "explorers": [
+      {
+        "name": "amstarscan-testnet",
+        "url": "https://testnet.amstarscan.com",
+        "standard": "EIP3091",
+        "iframe": true
+      }
+    ],
+    "shortName": "ASARt"
   },
   {
     "name": "Ancient8 Testnet",
@@ -2103,29 +2133,6 @@
       }
     ],
     "shortName": "beagle"
-  },
-  {
-    "name": "Bear Network Chain Testnet",
-    "rpc": [
-      "https://brnkc-test.bearnetwork.net"
-    ],
-    "faucets": [
-      "https://faucet.bearnetwork.net"
-    ],
-    "nativeCurrency": {
-      "name": "Bear Network Chain Testnet Token",
-      "symbol": "tBRNKC",
-      "decimals": 18
-    },
-    "chainId": 751230,
-    "explorers": [
-      {
-        "name": "brnktestscan",
-        "url": "https://brnktest-scan.bearnetwork.net",
-        "standard": "EIP3091"
-      }
-    ],
-    "shortName": "BRNKCTEST"
   },
   {
     "name": "Beresheet BereEVM Testnet",
@@ -3203,13 +3210,6 @@
     "chainId": 7700,
     "explorers": [
       {
-        "name": "dexguru",
-        "url": "https://canto.dex.guru",
-        "icon": "dexguru",
-        "standard": "EIP3091",
-        "iframe": true
-      },
-      {
         "name": "Canto Cosmos Explorer",
         "url": "https://cosmos-explorers.neobase.one",
         "standard": "none",
@@ -3219,6 +3219,13 @@
         "name": "Canto EVM Explorer (Blockscout)",
         "url": "https://tuber.build",
         "standard": "none"
+      },
+      {
+        "name": "dexguru",
+        "url": "https://canto.dex.guru",
+        "icon": "dexguru",
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "canto"
@@ -3293,8 +3300,7 @@
         "name": "Cascadia EVM Explorer",
         "url": "https://explorer.cascadia.foundation",
         "standard": "none",
-        "icon": "cascadia",
-        "iframe": true
+        "icon": "cascadia"
       },
       {
         "name": "Cascadia Cosmos Explorer",
@@ -3399,7 +3405,8 @@
       {
         "name": "UNcover",
         "url": "https://www.uncoverexplorer.com/?network=Nikau",
-        "standard": "none"
+        "standard": "none",
+        "iframe": true
       }
     ],
     "shortName": "cennz-n"
@@ -4539,7 +4546,8 @@
       {
         "name": "Dodao Explorer",
         "url": "https://tanssi-evmexplorer.netlify.app/?rpcUrl=https://fraa-dancebox-3041-rpc.a.dancebox.tanssi.network",
-        "standard": "none"
+        "standard": "none",
+        "iframe": true
       }
     ],
     "shortName": "dodao"
@@ -5735,7 +5743,8 @@
       {
         "name": "polkadotjs",
         "url": "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet.dev.svcs.ferrumnetwork.io#/explorer",
-        "standard": "none"
+        "standard": "none",
+        "iframe": true
       }
     ],
     "shortName": "frm"
@@ -5799,7 +5808,8 @@
       {
         "name": "Glif Explorer - Calibration",
         "url": "https://explorer.glif.io/?network=calibration",
-        "standard": "none"
+        "standard": "none",
+        "iframe": true
       },
       {
         "name": "Beryx",
@@ -5855,14 +5865,14 @@
         "standard": "none"
       },
       {
-        "name": "Filfox",
-        "url": "https://filfox.info/en",
+        "name": "Filscan",
+        "url": "https://filscan.io",
         "standard": "none",
         "iframe": true
       },
       {
-        "name": "Filscan",
-        "url": "https://filscan.io",
+        "name": "Filfox",
+        "url": "https://filfox.info/en",
         "standard": "none",
         "iframe": true
       },
@@ -6122,6 +6132,28 @@
       }
     ],
     "shortName": "frametest"
+  },
+  {
+    "name": "Fuse Mainnet",
+    "rpc": [
+      "https://rpc.fuse.io"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "Fuse",
+      "symbol": "FUSE",
+      "decimals": 18
+    },
+    "chainId": 122,
+    "explorers": [
+      {
+        "name": "blockscout",
+        "url": "https://explorer.fuse.io",
+        "icon": "blockscout",
+        "standard": "EIP3091"
+      }
+    ],
+    "shortName": "fuse"
   },
   {
     "name": "Fusion Mainnet",
@@ -6590,17 +6622,17 @@
         "standard": "EIP3091"
       },
       {
+        "name": "blockscout",
+        "url": "https://gnosis.blockscout.com",
+        "icon": "blockscout",
+        "standard": "EIP3091"
+      },
+      {
         "name": "dexguru",
         "url": "https://gnosis.dex.guru",
         "icon": "dexguru",
         "standard": "EIP3091",
         "iframe": true
-      },
-      {
-        "name": "blockscout",
-        "url": "https://gnosis.blockscout.com",
-        "icon": "blockscout",
-        "standard": "EIP3091"
       }
     ],
     "shortName": "gno"
@@ -7192,14 +7224,14 @@
         "iframe": true
       },
       {
-        "name": "Arkhia Explorer",
-        "url": "https://explorer.arkhia.io",
+        "name": "Hedera Explorer",
+        "url": "https://hederaexplorer.io",
         "standard": "none",
         "iframe": true
       },
       {
-        "name": "Hedera Explorer",
-        "url": "https://hederaexplorer.io",
+        "name": "Arkhia Explorer",
+        "url": "https://explorer.arkhia.io",
         "standard": "none",
         "iframe": true
       },
@@ -8435,7 +8467,8 @@
       {
         "name": "Polkadot.js",
         "url": "https://polkadot.js.org/apps/?rpc=wss://wss-krest.peaq.network#/explorer",
-        "standard": "none"
+        "standard": "none",
+        "iframe": true
       },
       {
         "name": "Subscan",
@@ -9700,7 +9733,8 @@
       {
         "name": "Tanssi Explorer",
         "url": "https://tanssi-evmexplorer.netlify.app/?rpcUrl=https://fraa-dancebox-3035-rpc.a.dancebox.tanssi.network",
-        "standard": "none"
+        "standard": "none",
+        "iframe": true
       }
     ],
     "shortName": "mdlrm"
@@ -10437,7 +10471,8 @@
       {
         "name": "Oasis Emerald Testnet Explorer",
         "url": "https://testnet.explorer.emerald.oasis.dev",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "emerald-testnet"
@@ -12169,16 +12204,16 @@
     "chainId": 369,
     "explorers": [
       {
-        "name": "otterscan",
-        "url": "https://otter.pulsechain.com",
-        "standard": "EIP3091"
-      },
-      {
         "name": "blockscout",
         "url": "https://scan.pulsechain.com",
         "icon": "blockscout",
         "standard": "EIP3091",
         "iframe": true
+      },
+      {
+        "name": "otterscan",
+        "url": "https://otter.pulsechain.com",
+        "standard": "EIP3091"
       }
     ],
     "shortName": "pls"
@@ -13891,16 +13926,16 @@
     "chainId": 336,
     "explorers": [
       {
-        "name": "subscan",
-        "url": "https://shiden.subscan.io",
-        "standard": "none",
-        "icon": "subscan"
-      },
-      {
         "name": "blockscout",
         "url": "https://blockscout.com/shiden",
         "icon": "blockscout",
         "standard": "EIP3091"
+      },
+      {
+        "name": "subscan",
+        "url": "https://shiden.subscan.io",
+        "standard": "none",
+        "icon": "subscan"
       }
     ],
     "shortName": "sdn"
@@ -14418,14 +14453,14 @@
     "chainId": 2048,
     "explorers": [
       {
-        "name": "Stratos EVM Explorer (Blockscout)",
-        "url": "https://web3-explorer.thestratos.org",
+        "name": "Stratos Cosmos Explorer (BigDipper)",
+        "url": "https://explorer.thestratos.org",
         "standard": "none",
         "iframe": true
       },
       {
-        "name": "Stratos Cosmos Explorer (BigDipper)",
-        "url": "https://explorer.thestratos.org",
+        "name": "Stratos EVM Explorer (Blockscout)",
+        "url": "https://web3-explorer.thestratos.org",
         "standard": "none",
         "iframe": true
       }
@@ -16400,15 +16435,15 @@
     "chainId": 50,
     "explorers": [
       {
-        "name": "xdcscan",
-        "url": "https://xdcscan.io",
+        "name": "blocksscan",
+        "url": "https://xdc.blocksscan.io",
         "icon": "blocksscan",
         "standard": "EIP3091",
         "iframe": true
       },
       {
-        "name": "blocksscan",
-        "url": "https://xdc.blocksscan.io",
+        "name": "xdcscan",
+        "url": "https://xdcscan.io",
         "icon": "blocksscan",
         "standard": "EIP3091",
         "iframe": true
@@ -16716,7 +16751,8 @@
       {
         "name": "Zilliqa EVM Isolated Server Explorer",
         "url": "https://devex.zilliqa.com/?network=https://zilliqa-isolated-server.zilliqa.com",
-        "standard": "none"
+        "standard": "none",
+        "iframe": true
       }
     ],
     "shortName": "zil-isolated-server"

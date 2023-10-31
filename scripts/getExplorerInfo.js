@@ -81,8 +81,7 @@ const main = async () => {
 						.then((res) => {
 							if (
 								!res.headers.raw()["x-frame-options"] &&
-								!res.headers.raw()["X-Frame-Options"] &&
-								!explorer.url.includes("?")
+								!res.headers.raw()["X-Frame-Options"]
 							) {
 								chains[i].explorers[j].iframe = true;
 							}
@@ -94,7 +93,7 @@ const main = async () => {
 
 							console.log(
 								"iframe:",
-								!res.headers.raw()["x-frame-options"],
+								!!chains[i].explorers[j].iframe,
 								chain.name,
 								explorer.url
 							);

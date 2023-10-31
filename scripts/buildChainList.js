@@ -3,7 +3,7 @@ const path = require("path");
 const config = require("../config/app");
 const explorers = require("../config/explorers.json");
 
-// const priorityExplorers = ["etherscan", "scan", "dexguru", "blockscout"];
+// const priorityExplorers = ["etherscan", "dexguru", "blockscout"];
 
 const main = async () => {
 	const rawChains = [];
@@ -29,14 +29,8 @@ const main = async () => {
 				if (chain.title && chain.title.length < 50) chain.name = chain.title;
 
 				/*
-				priorityExplorers.reverse().forEach((priority) => {
-					explorers[chain.chainId] = explorers[chain.chainId].sort((a, b) => {
-						if (a.name.includes(priority)) {
-							return -1;
-						} else {
-							return 0;
-						}
-					});
+				explorers[chain.chainId] = explorers[chain.chainId].sort((a, b) => {
+					priorityExplorers.indexOf(a.name) - priorityExplorers.indexOf(b.name);
 				});
 				*/
 

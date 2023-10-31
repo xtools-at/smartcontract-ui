@@ -27,15 +27,18 @@ export const useIframeUrl = () => {
 			let url = explorer.url;
 			if (url.endsWith("/")) url = url.substring(0, url.length - 1);
 
-			if (address && !txHash) {
-				url = `${url}/address/${address}`;
-			} else if (txHash) {
-				url = `${url}/tx/${txHash}`;
+			if (explorer.standard === "EIP3091" && !explorer.url.includes("?")) {
+				if (address && !txHash) {
+					url = `${url}/address/${address}`;
+				} else if (txHash) {
+					url = `${url}/tx/${txHash}`;
+				}
 			}
 
-			log("loading explorer url", url);
-
-			setIframeUrl(url);
+			if (url !== iframeUrl) {
+				log("loading explorer url", url);
+				setIframeUrl(url);
+			}
 		} else {
 			reset();
 		}
