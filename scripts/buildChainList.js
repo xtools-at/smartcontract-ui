@@ -1,8 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 const config = require("../config/app");
-const fetch = require("node-fetch");
 const explorers = require("../config/explorers.json");
+
+// const priorityExplorers = ["etherscan", "scan", "dexguru", "blockscout"];
 
 const main = async () => {
 	const rawChains = [];
@@ -23,10 +24,22 @@ const main = async () => {
 				chain.status !== "incubating" &&
 				chain.status !== "yolo" &&
 				chain.rpc &&
-				chain.rpc.length > 0 /* &&
-				chain.chainId === chain.networkId */
+				chain.rpc.length > 0
 			) {
 				if (chain.title && chain.title.length < 50) chain.name = chain.title;
+
+				/*
+				priorityExplorers.reverse().forEach((priority) => {
+					explorers[chain.chainId] = explorers[chain.chainId].sort((a, b) => {
+						if (a.name.includes(priority)) {
+							return -1;
+						} else {
+							return 0;
+						}
+					});
+				});
+				*/
+
 				chain.explorers = explorers[chain.chainId];
 
 				if (chain.explorers && chain.explorers.length) {

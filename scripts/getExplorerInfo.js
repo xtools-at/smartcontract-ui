@@ -3,15 +3,9 @@ const path = require("path");
 const config = require("../config/app");
 const fetch = require("node-fetch");
 
-const priorityExplorers = [
-	"etherscan",
-	"otterscan",
-	"dexguru",
-	"blockscout",
-	"scan",
-];
 const BATCH_SIZE = 25;
-const BATCH_TIMEOUT = 4;
+const BATCH_TIMEOUT = 10;
+const CALL_TIMEOUT = 15;
 
 const main = async () => {
 	const rawChains = [];
@@ -82,11 +76,12 @@ const main = async () => {
 
 				promises.push(
 					fetch(explorer.url, {
-						timeout: 4 * 1000,
+						timeout: CALL_TIMEOUT * 1000,
 					})
 						.then((res) => {
 							if (
 								!res.headers.raw()["x-frame-options"] &&
+								!res.headers.raw()["X-Frame-Options"] &&
 								!explorer.url.includes("?")
 							) {
 								chains[i].explorers[j].iframe = true;
@@ -109,18 +104,6 @@ const main = async () => {
 						})
 				);
 			}
-
-			priorityExplorers.reverse().forEach((priority) => {
-				chain.explorers = chain.explorers.sort((a, b) => {
-					if (a.name.includes(priority)) {
-						return -1;
-					} else if (b.name.includes(priority)) {
-						return 1;
-					} else {
-						return 0;
-					}
-				});
-			});
 		}
 	}
 
