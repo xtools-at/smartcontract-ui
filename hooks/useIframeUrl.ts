@@ -23,7 +23,7 @@ export const useIframeUrl = () => {
 				return;
 			}
 
-			let url = `${explorer.url}${txHash ? `/tx/${txHash}` : ""}`;
+			let url = explorer.url;
 			if (url.endsWith("/")) url = url.substring(0, url.length - 1);
 
 			if (address && !txHash) {
