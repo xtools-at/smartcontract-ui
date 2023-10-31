@@ -769,7 +769,7 @@ export default function Page() {
 			});
 			toggleResultDialog(true);
 
-			updateIframeUrl(selectedChain, address, writeResult.transactionHash);
+			updateIframeUrl(selectedChain, address, writeResult.hash);
 
 			toggleWriting(false);
 		} catch (err: any) {

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { iframeUrl as baseIframeUrl } from "config/app";
 import { Chain } from "types/Chain";
+import { log } from "utils/logger";
 
 export const useIframeUrl = () => {
 	const [iframeUrl, setIframeUrl] = useState(baseIframeUrl || "");
@@ -31,6 +32,9 @@ export const useIframeUrl = () => {
 			} else if (txHash) {
 				url = `${url}/tx/${txHash}`;
 			}
+
+			log("loading explorer url", url);
+
 			setIframeUrl(url);
 		} else {
 			reset();
