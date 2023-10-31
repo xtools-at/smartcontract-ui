@@ -3,6 +3,16 @@ const path = require("path");
 const config = require("../config/app");
 const fetch = require("node-fetch");
 
+const priorityExplorers = [
+	"etherscan",
+	"otterscan",
+	"dexguru",
+	"blockscout",
+	"scan",
+];
+const BATCH_SIZE = 25;
+const BATCH_TIMEOUT = 4;
+
 const main = async () => {
 	const rawChains = [];
 	const folderPath = path.resolve(
@@ -63,9 +73,11 @@ const main = async () => {
 			for (let j = 0; j < chain.explorers.length; j++) {
 				const explorer = chain.explorers[j];
 
-				if (i > 0 && i % 50 === 0) {
+				if (i > 0 && i % BATCH_SIZE === 0) {
 					console.log(`> fetching ${i}/${chains.length}`);
-					await new Promise((resolve) => setTimeout(resolve, 5 * 1000));
+					await new Promise((resolve) =>
+						setTimeout(resolve, BATCH_TIMEOUT * 1000)
+					);
 				}
 
 				promises.push(
@@ -97,6 +109,18 @@ const main = async () => {
 						})
 				);
 			}
+
+			priorityExplorers.reverse().forEach((priority) => {
+				chain.explorers = chain.explorers.sort((a, b) => {
+					if (a.name.includes(priority)) {
+						return -1;
+					} else if (b.name.includes(priority)) {
+						return 1;
+					} else {
+						return 0;
+					}
+				});
+			});
 		}
 	}
 
