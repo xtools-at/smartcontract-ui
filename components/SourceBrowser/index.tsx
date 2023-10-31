@@ -251,7 +251,7 @@ export const SourceBrowser = ({
 								basePath || ""
 							}/?json=/weth.json&address=0xD51BFa777609213A653a2CD067c9A0132a2D316A&func=deposit&eth=0.1e18&network=4337`}
 						>
-							WMC
+							WBEAM
 						</Link>
 						,{" "}
 						<Link
