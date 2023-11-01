@@ -276,15 +276,15 @@
   ],
   "50": [
     {
-      "name": "blocksscan",
-      "url": "https://xdc.blocksscan.io",
+      "name": "xdcscan",
+      "url": "https://xdcscan.io",
       "icon": "blocksscan",
       "standard": "EIP3091",
       "iframe": true
     },
     {
-      "name": "xdcscan",
-      "url": "https://xdcscan.io",
+      "name": "blocksscan",
+      "url": "https://xdc.blocksscan.io",
       "icon": "blocksscan",
       "standard": "EIP3091",
       "iframe": true
@@ -715,16 +715,16 @@
   ],
   "137": [
     {
+      "name": "polygonscan",
+      "url": "https://polygonscan.com",
+      "standard": "EIP3091"
+    },
+    {
       "name": "dexguru",
       "url": "https://polygon.dex.guru",
       "icon": "dexguru",
       "standard": "EIP3091",
       "iframe": true
-    },
-    {
-      "name": "polygonscan",
-      "url": "https://polygonscan.com",
-      "standard": "EIP3091"
     }
   ],
   "138": [
@@ -1100,12 +1100,6 @@
       "iframe": true
     },
     {
-      "name": "Hedera Explorer",
-      "url": "https://hederaexplorer.io",
-      "standard": "none",
-      "iframe": true
-    },
-    {
       "name": "Arkhia Explorer",
       "url": "https://explorer.arkhia.io",
       "standard": "none",
@@ -1118,6 +1112,12 @@
       "iframe": true
     },
     {
+      "name": "Hedera Explorer",
+      "url": "https://hederaexplorer.io",
+      "standard": "none",
+      "iframe": true
+    },
+    {
       "name": "Ledger Works Explore",
       "url": "https://explore.lworks.io",
       "standard": "none",
@@ -1125,12 +1125,6 @@
     }
   ],
   "296": [
-    {
-      "name": "Hedera Explorer",
-      "url": "https://hederaexplorer.io",
-      "standard": "none",
-      "iframe": true
-    },
     {
       "name": "HashScan",
       "url": "https://hashscan.io/testnet/dashboard",
@@ -1146,6 +1140,12 @@
     {
       "name": "DragonGlass",
       "url": "https://app.dragonglass.me",
+      "standard": "none",
+      "iframe": true
+    },
+    {
+      "name": "Hedera Explorer",
+      "url": "https://hederaexplorer.io",
       "standard": "none",
       "iframe": true
     },
@@ -1198,9 +1198,9 @@
   ],
   "314": [
     {
-      "name": "Glif Explorer",
-      "url": "https://explorer.glif.io",
-      "standard": "EIP3091",
+      "name": "Filfox",
+      "url": "https://filfox.info/en",
+      "standard": "none",
       "iframe": true
     },
     {
@@ -1209,26 +1209,26 @@
       "standard": "none"
     },
     {
+      "name": "Glif Explorer",
+      "url": "https://explorer.glif.io",
+      "standard": "EIP3091",
+      "iframe": true
+    },
+    {
+      "name": "Dev.storage",
+      "url": "https://dev.storage",
+      "standard": "none",
+      "iframe": true
+    },
+    {
       "name": "Filscan",
       "url": "https://filscan.io",
       "standard": "none",
       "iframe": true
     },
     {
-      "name": "Filfox",
-      "url": "https://filfox.info/en",
-      "standard": "none",
-      "iframe": true
-    },
-    {
       "name": "Filscout",
       "url": "https://filscout.io/en",
-      "standard": "none",
-      "iframe": true
-    },
-    {
-      "name": "Dev.storage",
-      "url": "https://dev.storage",
       "standard": "none",
       "iframe": true
     }
@@ -1259,16 +1259,16 @@
   ],
   "336": [
     {
-      "name": "blockscout",
-      "url": "https://blockscout.com/shiden",
-      "icon": "blockscout",
-      "standard": "EIP3091"
-    },
-    {
       "name": "subscan",
       "url": "https://shiden.subscan.io",
       "standard": "none",
       "icon": "subscan"
+    },
+    {
+      "name": "blockscout",
+      "url": "https://blockscout.com/shiden",
+      "icon": "blockscout",
+      "standard": "EIP3091"
     }
   ],
   "338": [
@@ -1701,14 +1701,14 @@
   "943": [
     {
       "name": "blockscout",
-      "url": "https://otter-testnet-pulsechain.g4mm4.io",
+      "url": "https://scan.v4.testnet.pulsechain.com",
+      "icon": "blockscout",
       "standard": "EIP3091",
       "iframe": true
     },
     {
       "name": "blockscout",
-      "url": "https://scan.v4.testnet.pulsechain.com",
-      "icon": "blockscout",
+      "url": "https://otter-testnet-pulsechain.g4mm4.io",
       "standard": "EIP3091",
       "iframe": true
     }
@@ -1914,14 +1914,6 @@
       "name": "MetaScan",
       "url": "https://meta.defiscan.live",
       "standard": "EIP3091"
-    }
-  ],
-  "1138": [
-    {
-      "name": "amstarscan-testnet",
-      "url": "https://testnet.amstarscan.com",
-      "standard": "EIP3091",
-      "iframe": true
     }
   ],
   "1149": [
@@ -2371,6 +2363,14 @@
       "iframe": true
     }
   ],
+  "1995": [
+    {
+      "name": "edexa-testnet",
+      "url": "https://explorer.testnet.edexa.com",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
   "2000": [
     {
       "name": "dogechain explorer",
@@ -2489,14 +2489,14 @@
   ],
   "2048": [
     {
-      "name": "Stratos Cosmos Explorer (BigDipper)",
-      "url": "https://explorer.thestratos.org",
+      "name": "Stratos EVM Explorer (Blockscout)",
+      "url": "https://web3-explorer.thestratos.org",
       "standard": "none",
       "iframe": true
     },
     {
-      "name": "Stratos EVM Explorer (Blockscout)",
-      "url": "https://web3-explorer.thestratos.org",
+      "name": "Stratos Cosmos Explorer (BigDipper)",
+      "url": "https://explorer.thestratos.org",
       "standard": "none",
       "iframe": true
     }
@@ -3279,15 +3279,15 @@
   ],
   "7001": [
     {
+      "name": "ZetaChain Athens Testnet Explorer",
+      "url": "https://athens3.explorer.zetachain.com",
+      "standard": "none"
+    },
+    {
       "name": "blockscout",
       "url": "https://zetachain-athens-3.blockscout.com",
       "icon": "blockscout",
       "standard": "EIP3091"
-    },
-    {
-      "name": "ZetaChain Athens Testnet Explorer",
-      "url": "https://athens3.explorer.zetachain.com",
-      "standard": "none"
     }
   ],
   "7027": [
@@ -3479,15 +3479,15 @@
   ],
   "8453": [
     {
+      "name": "basescan",
+      "url": "https://basescan.org",
+      "standard": "none"
+    },
+    {
       "name": "basescout",
       "url": "https://base.blockscout.com",
       "icon": "blockscout",
       "standard": "EIP3091"
-    },
-    {
-      "name": "basescan",
-      "url": "https://basescan.org",
-      "standard": "none"
     },
     {
       "name": "dexguru",
@@ -3730,14 +3730,14 @@
   ],
   "10200": [
     {
-      "name": "blockscout",
-      "url": "https://gnosis-chiado.blockscout.com",
+      "name": "blockscout-chiadochain",
+      "url": "https://blockscout.chiadochain.net",
       "icon": "blockscout",
       "standard": "EIP3091"
     },
     {
-      "name": "blockscout-chiadochain",
-      "url": "https://blockscout.chiadochain.net",
+      "name": "blockscout",
+      "url": "https://gnosis-chiado.blockscout.com",
       "icon": "blockscout",
       "standard": "EIP3091"
     }
@@ -4100,15 +4100,15 @@
   ],
   "22023": [
     {
-      "name": "Taycan Cosmos Explorer(BigDipper)",
-      "url": "https://taycan-cosmoscan.hupayx.io",
+      "name": "Taycan Explorer(Blockscout)",
+      "url": "https://taycan-evmscan.hupayx.io",
       "standard": "none",
       "icon": "shuffle",
       "iframe": true
     },
     {
-      "name": "Taycan Explorer(Blockscout)",
-      "url": "https://taycan-evmscan.hupayx.io",
+      "name": "Taycan Cosmos Explorer(BigDipper)",
+      "url": "https://taycan-cosmoscan.hupayx.io",
       "standard": "none",
       "icon": "shuffle",
       "iframe": true
@@ -4359,30 +4359,30 @@
       "standard": "EIP3091"
     },
     {
+      "name": "Arbitrum Explorer",
+      "url": "https://explorer.arbitrum.io",
+      "standard": "EIP3091"
+    },
+    {
       "name": "dexguru",
       "url": "https://arbitrum.dex.guru",
       "icon": "dexguru",
       "standard": "EIP3091",
       "iframe": true
-    },
-    {
-      "name": "Arbitrum Explorer",
-      "url": "https://explorer.arbitrum.io",
-      "standard": "EIP3091"
     }
   ],
   "42170": [
     {
-      "name": "dexguru",
-      "url": "https://nova.dex.guru",
-      "icon": "dexguru",
+      "name": "Arbitrum Nova Chain Explorer",
+      "url": "https://nova-explorer.arbitrum.io",
+      "icon": "blockscout",
       "standard": "EIP3091",
       "iframe": true
     },
     {
-      "name": "Arbitrum Nova Chain Explorer",
-      "url": "https://nova-explorer.arbitrum.io",
-      "icon": "blockscout",
+      "name": "dexguru",
+      "url": "https://nova.dex.guru",
+      "icon": "dexguru",
       "standard": "EIP3091",
       "iframe": true
     }
@@ -4404,8 +4404,7 @@
     {
       "name": "Oasis Emerald Testnet Explorer",
       "url": "https://testnet.explorer.emerald.oasis.dev",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "42262": [
@@ -4610,15 +4609,15 @@
       "icon": "linea"
     },
     {
-      "name": "L2scan",
-      "url": "https://linea.l2scan.co",
+      "name": "Blockscout",
+      "url": "https://explorer.linea.build",
       "standard": "EIP3091",
       "icon": "linea",
       "iframe": true
     },
     {
-      "name": "Blockscout",
-      "url": "https://explorer.linea.build",
+      "name": "L2scan",
+      "url": "https://linea.l2scan.co",
       "standard": "EIP3091",
       "icon": "linea",
       "iframe": true
@@ -5194,19 +5193,14 @@
   ],
   "314159": [
     {
-      "name": "Glif Explorer - Calibration",
-      "url": "https://explorer.glif.io/?network=calibration",
+      "name": "Filscan - Calibration",
+      "url": "https://calibration.filscan.io",
       "standard": "none",
       "iframe": true
     },
     {
-      "name": "Beryx",
-      "url": "https://beryx.zondax.ch",
-      "standard": "none"
-    },
-    {
-      "name": "Filscan - Calibration",
-      "url": "https://calibration.filscan.io",
+      "name": "Filscout - Calibration",
+      "url": "https://calibration.filscout.com/en",
       "standard": "none",
       "iframe": true
     },
@@ -5217,10 +5211,15 @@
       "iframe": true
     },
     {
-      "name": "Filscout - Calibration",
-      "url": "https://calibration.filscout.com/en",
+      "name": "Glif Explorer - Calibration",
+      "url": "https://explorer.glif.io/?network=calibration",
       "standard": "none",
       "iframe": true
+    },
+    {
+      "name": "Beryx",
+      "url": "https://beryx.zondax.ch",
+      "standard": "none"
     }
   ],
   "330844": [
@@ -5451,6 +5450,13 @@
       "iframe": true
     }
   ],
+  "751230": [
+    {
+      "name": "brnktestscan",
+      "url": "https://brnktest-scan.bearnetwork.net",
+      "standard": "EIP3091"
+    }
+  ],
   "761412": [
     {
       "name": "Miexs Smartchain Explorer",
@@ -5642,15 +5648,15 @@
   ],
   "11155111": [
     {
+      "name": "etherscan-sepolia",
+      "url": "https://sepolia.etherscan.io",
+      "standard": "EIP3091"
+    },
+    {
       "name": "otterscan-sepolia",
       "url": "https://sepolia.otterscan.io",
       "standard": "EIP3091",
       "iframe": true
-    },
-    {
-      "name": "etherscan-sepolia",
-      "url": "https://sepolia.etherscan.io",
-      "standard": "EIP3091"
     }
   ],
   "14288640": [
@@ -5768,6 +5774,12 @@
   ],
   "245022926": [
     {
+      "name": "native",
+      "url": "https://devnet.explorer.neon-labs.org",
+      "standard": "EIP3091",
+      "iframe": true
+    },
+    {
       "name": "neonscan",
       "url": "https://devnet.neonscan.org",
       "standard": "EIP3091",
@@ -5778,23 +5790,17 @@
       "url": "https://neon-devnet.blockscout.com",
       "icon": "blockscout",
       "standard": "EIP3091"
-    },
-    {
-      "name": "native",
-      "url": "https://devnet.explorer.neon-labs.org",
-      "standard": "EIP3091",
-      "iframe": true
     }
   ],
   "245022940": [
     {
-      "name": "neonscan",
-      "url": "https://testnet.neonscan.org",
+      "name": "native",
+      "url": "https://testnet.explorer.neon-labs.org",
       "standard": "EIP3091"
     },
     {
-      "name": "native",
-      "url": "https://testnet.explorer.neon-labs.org",
+      "name": "neonscan",
+      "url": "https://testnet.neonscan.org",
       "standard": "EIP3091"
     }
   ],
@@ -6022,18 +6028,18 @@
       "iframe": true
     }
   ],
-  "11297108099": [
-    {
-      "name": "Palm Testnet Explorer",
-      "url": "https://explorer.palm-uat.xyz",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "11297108109": [
     {
       "name": "Palm Explorer",
       "url": "https://explorer.palm.io",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
+  "11297108099": [
+    {
+      "name": "Palm Testnet Explorer",
+      "url": "https://explorer.palm-uat.xyz",
       "standard": "EIP3091",
       "iframe": true
     }

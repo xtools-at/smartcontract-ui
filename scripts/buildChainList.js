@@ -34,7 +34,7 @@ const main = async () => {
 				});
 				*/
 
-				chain.explorers = explorers[chain.chainId];
+				chain.explorers = explorers[chain.chainId] || [];
 
 				if (chain.explorers && chain.explorers.length) {
 					rawChains.push(chain);

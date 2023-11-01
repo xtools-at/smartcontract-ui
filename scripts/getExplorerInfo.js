@@ -86,11 +86,6 @@ const main = async () => {
 								chains[i].explorers[j].iframe = true;
 							}
 
-							if (!explorers[chain.chainId]) {
-								explorers[chain.chainId] = [];
-							}
-							explorers[chain.chainId].push(chains[i].explorers[j]);
-
 							console.log(
 								"iframe:",
 								!!chains[i].explorers[j].iframe,
@@ -99,6 +94,7 @@ const main = async () => {
 							);
 						})
 						.catch(() => {
+							chains[i].explorers[j].failed = true;
 							console.log("failed:", chain.name, explorer.url);
 						})
 				);
@@ -107,6 +103,11 @@ const main = async () => {
 	}
 
 	await Promise.allSettled(promises);
+
+	chains.forEach((chain) => {
+		explorers[chain.chainId] = chain.explorers.filter((ex) => !ex.failed);
+		if (!explorers[chain.chainId].length) explorers[chain.chainId] = undefined;
+	});
 
 	fs.writeFileSync(
 		__dirname + "/../config/explorers.json",
