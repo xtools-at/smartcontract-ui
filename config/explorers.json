@@ -1080,8 +1080,7 @@
       "name": "orderlyscout",
       "url": "https://explorer.orderly.network",
       "icon": "blockscout",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "295": [
@@ -1309,14 +1308,6 @@
       "standard": "EIP3091"
     }
   ],
-  "371": [
-    {
-      "name": "blockscout",
-      "url": "https://explorer-testnet.theconsta.com",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "399": [
     {
       "name": "N3scan",
@@ -1361,16 +1352,14 @@
       "name": "blockscout",
       "url": "https://explorer.publicgoods.network",
       "icon": "blockscout",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "444": [
     {
       "name": "Synapse Chain Sepolia",
       "url": "https://sepolia.synapsescan.com",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "456": [
@@ -1689,8 +1678,7 @@
     {
       "name": "modescout",
       "url": "https://sepolia.explorer.mode.network",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "927": [
@@ -2791,14 +2779,6 @@
       "iframe": true
     }
   ],
-  "3434": [
-    {
-      "name": "SecureChain",
-      "url": "https://testnet.securechain.ai",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "3500": [
     {
       "name": "Paribu Net Testnet Explorer",
@@ -3016,8 +2996,7 @@
       "name": "basescout",
       "url": "https://explorerl2new-orderly-l2-4460-sepolia-8tc3sd7dvy.t.conduit.xyz",
       "icon": "blockscout",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "4689": [
@@ -3430,7 +3409,8 @@
     {
       "name": "Bitrock Testnet Explorer",
       "url": "https://testnetscan.bit-rock.io",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "7777": [
@@ -3445,13 +3425,6 @@
       "name": "DOScan",
       "url": "https://doscan.io",
       "icon": "doschain",
-      "standard": "EIP3091"
-    }
-  ],
-  "8082": [
-    {
-      "name": "Shardeum Scan",
-      "url": "https://explorer-sphinx.shardeum.org",
       "standard": "EIP3091"
     }
   ],
@@ -4604,8 +4577,7 @@
       "name": "blockscout",
       "url": "https://explorer.sepolia.publicgoods.network",
       "icon": "blockscout",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "59140": [
@@ -5663,8 +5635,7 @@
     {
       "name": "Zora Network Explorer",
       "url": "https://explorer.zora.energy",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "8007736": [
@@ -5921,8 +5892,7 @@
     {
       "name": "Zora Sepolia Testnet Network Explorer",
       "url": "https://sepolia.explorer.zora.energy",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "1146703430": [
@@ -6055,8 +6025,7 @@
     {
       "name": "a8scan-testnet",
       "url": "https://testnet.a8scan.io",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "4216137055": [

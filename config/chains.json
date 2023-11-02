@@ -1542,8 +1542,7 @@
       {
         "name": "a8scan-testnet",
         "url": "https://testnet.a8scan.io",
-        "standard": "EIP3091",
-        "iframe": true
+        "standard": "EIP3091"
       }
     ],
     "shortName": "a8"
@@ -2547,7 +2546,8 @@
       {
         "name": "Bitrock Testnet Explorer",
         "url": "https://testnetscan.bit-rock.io",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "tbitrock"
@@ -3884,28 +3884,6 @@
       }
     ],
     "shortName": "ttrpg"
-  },
-  {
-    "name": "Consta Testnet",
-    "rpc": [
-      "https://rpc-testnet.theconsta.com"
-    ],
-    "faucets": [],
-    "nativeCurrency": {
-      "name": "tCNT",
-      "symbol": "tCNT",
-      "decimals": 18
-    },
-    "chainId": 371,
-    "explorers": [
-      {
-        "name": "blockscout",
-        "url": "https://explorer-testnet.theconsta.com",
-        "standard": "EIP3091",
-        "iframe": true
-      }
-    ],
-    "shortName": "tCNT"
   },
   {
     "name": "Core Blockchain Mainnet",
@@ -9802,8 +9780,7 @@
       {
         "name": "modescout",
         "url": "https://sepolia.explorer.mode.network",
-        "standard": "none",
-        "iframe": true
+        "standard": "none"
       }
     ],
     "shortName": "modesep"
@@ -11264,8 +11241,7 @@
         "name": "orderlyscout",
         "url": "https://explorer.orderly.network",
         "icon": "blockscout",
-        "standard": "EIP3091",
-        "iframe": true
+        "standard": "EIP3091"
       }
     ],
     "shortName": "orderly"
@@ -11287,8 +11263,7 @@
         "name": "basescout",
         "url": "https://explorerl2new-orderly-l2-4460-sepolia-8tc3sd7dvy.t.conduit.xyz",
         "icon": "blockscout",
-        "standard": "EIP3091",
-        "iframe": true
+        "standard": "EIP3091"
       }
     ],
     "shortName": "orderlyl2"
@@ -11697,8 +11672,7 @@
         "name": "blockscout",
         "url": "https://explorer.publicgoods.network",
         "icon": "blockscout",
-        "standard": "EIP3091",
-        "iframe": true
+        "standard": "EIP3091"
       }
     ],
     "shortName": "PGN"
@@ -13822,30 +13796,6 @@
     "shortName": "scai"
   },
   {
-    "name": "SecureChain Testnet",
-    "rpc": [
-      "https://testnet-rpc.securechain.ai"
-    ],
-    "faucets": [
-      "https://faucet.securechain.ai"
-    ],
-    "nativeCurrency": {
-      "name": "SCAI",
-      "symbol": "SCAI",
-      "decimals": 18
-    },
-    "chainId": 3434,
-    "explorers": [
-      {
-        "name": "SecureChain",
-        "url": "https://testnet.securechain.ai",
-        "standard": "EIP3091",
-        "iframe": true
-      }
-    ],
-    "shortName": "SCAIt"
-  },
-  {
     "name": "Seele Mainnet",
     "rpc": [
       "https://rpc.seelen.pro/"
@@ -13932,34 +13882,10 @@
         "name": "blockscout",
         "url": "https://explorer.sepolia.publicgoods.network",
         "icon": "blockscout",
-        "standard": "EIP3091",
-        "iframe": true
-      }
-    ],
-    "shortName": "sepPGN"
-  },
-  {
-    "name": "Shardeum Sphinx 1.X",
-    "rpc": [
-      "https://sphinx.shardeum.org/"
-    ],
-    "faucets": [
-      "https://faucet-sphinx.shardeum.org/"
-    ],
-    "nativeCurrency": {
-      "name": "Shardeum SHM",
-      "symbol": "SHM",
-      "decimals": 18
-    },
-    "chainId": 8082,
-    "explorers": [
-      {
-        "name": "Shardeum Scan",
-        "url": "https://explorer-sphinx.shardeum.org",
         "standard": "EIP3091"
       }
     ],
-    "shortName": "Sphinx10"
+    "shortName": "sepPGN"
   },
   {
     "name": "Shibarium",
@@ -14791,8 +14717,7 @@
       {
         "name": "Synapse Chain Sepolia",
         "url": "https://sepolia.synapsescan.com",
-        "standard": "EIP3091",
-        "iframe": true
+        "standard": "EIP3091"
       }
     ],
     "shortName": "synapse-sepolia"
@@ -16966,8 +16891,7 @@
       {
         "name": "Zora Network Explorer",
         "url": "https://explorer.zora.energy",
-        "standard": "EIP3091",
-        "iframe": true
+        "standard": "EIP3091"
       }
     ],
     "shortName": "zora"
@@ -16988,8 +16912,7 @@
       {
         "name": "Zora Sepolia Testnet Network Explorer",
         "url": "https://sepolia.explorer.zora.energy",
-        "standard": "EIP3091",
-        "iframe": true
+        "standard": "EIP3091"
       }
     ],
     "shortName": "zsep"

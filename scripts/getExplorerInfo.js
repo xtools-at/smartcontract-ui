@@ -4,8 +4,9 @@ const config = require("../config/app");
 const fetch = require("node-fetch");
 
 const BATCH_SIZE = 50;
-const BATCH_TIMEOUT = 6;
-const CALL_TIMEOUT = 14;
+const BATCH_TIMEOUT = 7;
+const CALL_TIMEOUT = 15;
+const CALL_METHOD = "GET";
 
 const main = async () => {
 	const startTime = Date.now();
@@ -54,7 +55,7 @@ const main = async () => {
 	});
 
 	console.log(
-		`>> getIframeInfo: fetching ${chains.length}/${fileNames.length} explorer urls`
+		`>> getIframeInfo: fetching explorer urls for ${chains.length}/${fileNames.length} chains`
 	);
 
 	const explorers = {};
@@ -75,7 +76,7 @@ const main = async () => {
 
 				promises.push(
 					fetch(explorer.url, {
-						method: "HEAD",
+						method: CALL_METHOD,
 						timeout: CALL_TIMEOUT * 1000,
 					})
 						.then((res) => {
@@ -122,9 +123,11 @@ const main = async () => {
 	);
 
 	console.log(
-		`\n>> Finished probing ${fileNames.length} explorer urls, time elapsed = ${
+		`\n>> Finished probing explorer urls for ${
+			chains.length
+		} chains, time elapsed = ${Math.round(
 			(Date.now() - startTime) / 1000
-		} seconds.`
+		)} seconds.`
 	);
 };
 
