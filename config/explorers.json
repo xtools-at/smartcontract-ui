@@ -1915,6 +1915,14 @@
       "standard": "EIP3091"
     }
   ],
+  "1138": [
+    {
+      "name": "amstarscan-testnet",
+      "url": "https://testnet.amstarscan.com",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
   "1149": [
     {
       "name": "Plexchain Explorer",
@@ -2779,6 +2787,14 @@
       "iframe": true
     }
   ],
+  "3434": [
+    {
+      "name": "SecureChain",
+      "url": "https://testnet.securechain.ai",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
   "3500": [
     {
       "name": "Paribu Net Testnet Explorer",
@@ -3203,6 +3219,13 @@
       "url": "https://explorer.cascadia.foundation",
       "standard": "none",
       "icon": "cascadia"
+    },
+    {
+      "name": "Cascadia Cosmos Explorer",
+      "url": "https://validator.cascadia.foundation",
+      "standard": "none",
+      "icon": "cascadia",
+      "iframe": true
     }
   ],
   "6118": [
@@ -4390,8 +4413,7 @@
     {
       "name": "Oasis Emerald Testnet Explorer",
       "url": "https://testnet.explorer.emerald.oasis.dev",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "42262": [

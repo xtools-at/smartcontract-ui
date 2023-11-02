@@ -103,6 +103,8 @@ export default function Page() {
 		log("history -> address");
 		setAddress(entry.address);
 
+		updateIframeUrl(chain, entry.address, null);
+
 		const func = newFunctions.find((f) => f.name === entry.function);
 		if (func) {
 			log("history -> function");
@@ -817,7 +819,6 @@ export default function Page() {
 				// scrolling="no"
 				border: 0,
 			}}
-			onError={() => updateIframeUrl(null, null, null)}
 		/>
 	) : null;
 
