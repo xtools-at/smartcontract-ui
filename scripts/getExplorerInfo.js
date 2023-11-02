@@ -8,6 +8,7 @@ const BATCH_TIMEOUT = 10;
 const CALL_TIMEOUT = 15;
 
 const main = async () => {
+	const startTime = Date.now();
 	const rawChains = [];
 	const folderPath = path.resolve(
 		__dirname,
@@ -112,6 +113,12 @@ const main = async () => {
 	fs.writeFileSync(
 		__dirname + "/../config/explorers.json",
 		JSON.stringify(explorers, null, 2)
+	);
+
+	console.log(
+		`\n>> Finished probing ${fileNames.length} explorer urls, time elapsed = ${
+			(Date.now() - startTime) / 1000
+		} seconds.`
 	);
 };
 

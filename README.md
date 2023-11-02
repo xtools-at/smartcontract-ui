@@ -134,10 +134,15 @@ You can set all the above using url params and access any setup with a deeplink:
 
 - install node.js >= 16 and yarn
 - run `yarn` to install dependencies
-- run `yarn chainlist:update` to update chain list sources
-- run `yarn explorer:update` to update block explorer list
-- run `yarn chainlist` to build final chain list
 - run `yarn dev` to start locally
+
+**Update**
+
+Running `yarn update` executes the following:
+
+- `yarn chainlist:update` to update chain list sources
+- `yarn explorer` to update block explorer list (this may take ~3-5min)
+- `yarn chainlist` to build final chain list
 
 **Customize**
 

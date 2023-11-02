@@ -36,12 +36,14 @@
 		"use-immer": "^0.6.0"
 	},
 	"scripts": {
+		"postinstall": "git submodule update --init --remote",
 		"dev": "yarn chainlist && (local-ssl-proxy --source 3443 --target 3000) & next",
 		"build": "next build && next export",
 		"start": "next start",
 		"chainlist": "node scripts/buildChainList",
-		"chainlist:update": "git submodule update --init --remote && yarn chainlist",
-		"explorer:update": "node scripts/getExplorerInfo"
+		"chainlist:update": "git submodule update && yarn chainlist",
+		"explorer": "node scripts/getExplorerInfo && yarn chainlist",
+		"update": "yarn chainlist:update && yarn explorer"
 	},
 	"devDependencies": {
 		"@types/md5": "^2.3.1",

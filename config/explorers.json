@@ -743,15 +743,6 @@
       "iframe": true
     }
   ],
-  "144": [
-    {
-      "name": "Phiscan",
-      "url": "https://phiscan.com",
-      "icon": "phi",
-      "standard": "none",
-      "iframe": true
-    }
-  ],
   "148": [
     {
       "name": "explorer",
@@ -1321,6 +1312,14 @@
     {
       "name": "blockscout",
       "url": "https://explorer-testnet.theconsta.com",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
+  "399": [
+    {
+      "name": "N3scan",
+      "url": "https://scan.nativ3.network",
       "standard": "EIP3091",
       "iframe": true
     }
@@ -2780,13 +2779,6 @@
       "iframe": true
     }
   ],
-  "3434": [
-    {
-      "name": "SecureChain",
-      "url": "https://testnet.securechain.ai",
-      "standard": "EIP3091"
-    }
-  ],
   "3500": [
     {
       "name": "Paribu Net Testnet Explorer",
@@ -2811,17 +2803,18 @@
       "iframe": true
     }
   ],
+  "3602": [
+    {
+      "name": "Pando Testnet Explorer",
+      "url": "https://testnet.explorer.pandoproject.org",
+      "standard": "none",
+      "iframe": true
+    }
+  ],
   "3636": [
     {
       "name": "3xpl",
       "url": "https://3xpl.com/botanix",
-      "standard": "EIP3091"
-    }
-  ],
-  "3637": [
-    {
-      "name": "Botanix",
-      "url": "https://btxtestchain.com",
       "standard": "EIP3091"
     }
   ],
@@ -3210,13 +3203,6 @@
       "url": "https://explorer.cascadia.foundation",
       "standard": "none",
       "icon": "cascadia"
-    },
-    {
-      "name": "Cascadia Cosmos Explorer",
-      "url": "https://validator.cascadia.foundation",
-      "standard": "none",
-      "icon": "cascadia",
-      "iframe": true
     }
   ],
   "6118": [
@@ -3913,14 +3899,6 @@
       "iframe": true
     }
   ],
-  "12890": [
-    {
-      "name": "Quantum Scan Testnet",
-      "url": "https://testnet.quantumscan.org",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "13308": [
     {
       "name": "Creditscan",
@@ -4201,6 +4179,14 @@
       "iframe": true
     }
   ],
+  "29548": [
+    {
+      "name": "MCH Verse Explorer",
+      "url": "https://explorer.oasys.mycryptoheroes.net",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
   "30067": [
     {
       "name": "Piece Scan",
@@ -4404,7 +4390,8 @@
     {
       "name": "Oasis Emerald Testnet Explorer",
       "url": "https://testnet.explorer.emerald.oasis.dev",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "42262": [
@@ -4513,6 +4500,15 @@
       "name": "Sardis",
       "url": "https://contract-mainnet.sardisnetwork.com",
       "standard": "EIP3091"
+    }
+  ],
+  "52014": [
+    {
+      "name": "blockscout",
+      "url": "https://blockexplorer.electroneum.com",
+      "icon": "electroneum",
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "54211": [
@@ -5066,14 +5062,6 @@
       "iframe": true
     }
   ],
-  "167005": [
-    {
-      "name": "blockscout",
-      "url": "https://explorer.test.taiko.xyz",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "188710": [
     {
       "name": "Bitica DPOS Blockchain Explorer",
@@ -5227,8 +5215,7 @@
       "name": "TTcoin Smart Chain Explorer",
       "url": "https://tscscan.com",
       "standard": "EIP3091",
-      "icon": "tscscan",
-      "iframe": true
+      "icon": "tscscan"
     }
   ],
   "333331": [
@@ -5236,6 +5223,14 @@
       "name": "avescan",
       "url": "https://testnet.avescoin.io",
       "icon": "avescan",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
+  "333333": [
+    {
+      "name": "Nativ3 Test Explorer",
+      "url": "https://scantest.nativ3.network",
       "standard": "EIP3091",
       "iframe": true
     }
@@ -5587,6 +5582,15 @@
       "name": "MXC Wannsee zkEVM Testnet",
       "url": "https://wannsee-explorer.mxc.com",
       "standard": "EIP3091"
+    }
+  ],
+  "5201420": [
+    {
+      "name": "blockscout",
+      "url": "https://blockexplorer.thesecurityteam.rocks",
+      "icon": "electroneum",
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "5555555": [

@@ -2939,29 +2939,6 @@
     "shortName": "boa"
   },
   {
-    "name": "Botanix Mainnet",
-    "rpc": [
-      "https://rpc.btxtestchain.com"
-    ],
-    "faucets": [
-      "https://faucet.btxtestchain.com"
-    ],
-    "nativeCurrency": {
-      "name": "Botanix",
-      "symbol": "BTC",
-      "decimals": 18
-    },
-    "chainId": 3637,
-    "explorers": [
-      {
-        "name": "Botanix",
-        "url": "https://btxtestchain.com",
-        "standard": "EIP3091"
-      }
-    ],
-    "shortName": "BTCm"
-  },
-  {
     "name": "Botanix Testnet",
     "rpc": [
       "https://node.botanixlabs.dev"
@@ -3302,13 +3279,6 @@
         "url": "https://explorer.cascadia.foundation",
         "standard": "none",
         "icon": "cascadia"
-      },
-      {
-        "name": "Cascadia Cosmos Explorer",
-        "url": "https://validator.cascadia.foundation",
-        "standard": "none",
-        "icon": "cascadia",
-        "iframe": true
       }
     ],
     "shortName": "cascadia"
@@ -5050,6 +5020,52 @@
       }
     ],
     "shortName": "esct"
+  },
+  {
+    "name": "Electroneum Mainnet",
+    "rpc": [
+      "https://api.electroneum.com"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "Electroneum",
+      "symbol": "ETN",
+      "decimals": 18
+    },
+    "chainId": 52014,
+    "explorers": [
+      {
+        "name": "blockscout",
+        "url": "https://blockexplorer.electroneum.com",
+        "icon": "electroneum",
+        "standard": "EIP3091",
+        "iframe": true
+      }
+    ],
+    "shortName": "etn-mainnet"
+  },
+  {
+    "name": "Electroneum Testnet",
+    "rpc": [
+      "https://api.electroneum.com"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "Electroneum",
+      "symbol": "ETN",
+      "decimals": 18
+    },
+    "chainId": 5201420,
+    "explorers": [
+      {
+        "name": "blockscout",
+        "url": "https://blockexplorer.thesecurityteam.rocks",
+        "icon": "electroneum",
+        "standard": "EIP3091",
+        "iframe": true
+      }
+    ],
+    "shortName": "etn-testnet"
   },
   {
     "name": "eLiberty Mainnet",
@@ -9145,6 +9161,28 @@
     "shortName": "PWR"
   },
   {
+    "name": "MCH Verse Mainnet",
+    "rpc": [
+      "https://rpc.oasys.mycryptoheroes.net"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "OAS",
+      "symbol": "OAS",
+      "decimals": 18
+    },
+    "chainId": 29548,
+    "explorers": [
+      {
+        "name": "MCH Verse Explorer",
+        "url": "https://explorer.oasys.mycryptoheroes.net",
+        "standard": "EIP3091",
+        "iframe": true
+      }
+    ],
+    "shortName": "MCHV"
+  },
+  {
     "name": "Meld Mainnet",
     "rpc": [
       "https://subnets.avax.network/meld/mainnet/rpc"
@@ -10042,6 +10080,52 @@
     "shortName": "NahmiiTestnet"
   },
   {
+    "name": "Nativ3 Mainnet",
+    "rpc": [
+      "https://rpc.nativ3.network",
+      "wss://ws.nativ3.network"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "USNT",
+      "symbol": "USNT",
+      "decimals": 18
+    },
+    "chainId": 399,
+    "explorers": [
+      {
+        "name": "N3scan",
+        "url": "https://scan.nativ3.network",
+        "standard": "EIP3091",
+        "iframe": true
+      }
+    ],
+    "shortName": "N3"
+  },
+  {
+    "name": "Nativ3 Testnet",
+    "rpc": [
+      "https://rpctest.nativ3.network",
+      "wss://wstest.nativ3.network"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "USNT",
+      "symbol": "USNT",
+      "decimals": 18
+    },
+    "chainId": 333333,
+    "explorers": [
+      {
+        "name": "Nativ3 Test Explorer",
+        "url": "https://scantest.nativ3.network",
+        "standard": "EIP3091",
+        "iframe": true
+      }
+    ],
+    "shortName": "N3-Test"
+  },
+  {
     "name": "Nautilus Mainnet",
     "rpc": [
       "https://api.nautilus.nautchain.xyz"
@@ -10497,7 +10581,8 @@
       {
         "name": "Oasis Emerald Testnet Explorer",
         "url": "https://testnet.explorer.emerald.oasis.dev",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "emerald-testnet"
@@ -10642,29 +10727,6 @@
       }
     ],
     "shortName": "oho"
-  },
-  {
-    "name": "OKBChain Testnet",
-    "rpc": [
-      "https://okbtestrpc.okbchain.org"
-    ],
-    "faucets": [
-      "https://www.oklink.com/okbc-test"
-    ],
-    "nativeCurrency": {
-      "name": "OKBChain Global Utility Token in testnet",
-      "symbol": "OKB",
-      "decimals": 18
-    },
-    "chainId": 195,
-    "explorers": [
-      {
-        "name": "OKLink",
-        "url": "https://www.oklink.com/okbc-test",
-        "standard": "EIP3091"
-      }
-    ],
-    "shortName": "tokb"
   },
   {
     "name": "OKExChain Testnet",
@@ -11404,6 +11466,28 @@
     "shortName": "pando-mainnet"
   },
   {
+    "name": "PandoProject Testnet",
+    "rpc": [
+      "https://testnet.ethrpc.pandoproject.org/rpc"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "pando-token",
+      "symbol": "PTX",
+      "decimals": 18
+    },
+    "chainId": 3602,
+    "explorers": [
+      {
+        "name": "Pando Testnet Explorer",
+        "url": "https://testnet.explorer.pandoproject.org",
+        "standard": "none",
+        "iframe": true
+      }
+    ],
+    "shortName": "pando-testnet"
+  },
+  {
     "name": "Paribu Net Mainnet",
     "rpc": [
       "https://rpc.paribu.network"
@@ -11588,29 +11672,6 @@
       }
     ],
     "shortName": "PGN"
-  },
-  {
-    "name": "PHI Network v2",
-    "rpc": [
-      "https://connect.phi.network"
-    ],
-    "faucets": [],
-    "nativeCurrency": {
-      "name": "PHI",
-      "symbol": "Φ",
-      "decimals": 18
-    },
-    "chainId": 144,
-    "explorers": [
-      {
-        "name": "Phiscan",
-        "url": "https://phiscan.com",
-        "icon": "phi",
-        "standard": "none",
-        "iframe": true
-      }
-    ],
-    "shortName": "PHI"
   },
   {
     "name": "Phoenix Mainnet",
@@ -12480,28 +12541,6 @@
       }
     ],
     "shortName": "qnet"
-  },
-  {
-    "name": "Quantum Chain Testnet",
-    "rpc": [
-      "https://testnet-rpc.quantumscan.org"
-    ],
-    "faucets": [],
-    "nativeCurrency": {
-      "name": "Quantum Chain",
-      "symbol": "tQNET",
-      "decimals": 18
-    },
-    "chainId": 12890,
-    "explorers": [
-      {
-        "name": "Quantum Scan Testnet",
-        "url": "https://testnet.quantumscan.org",
-        "standard": "EIP3091",
-        "iframe": true
-      }
-    ],
-    "shortName": "tqnet"
   },
   {
     "name": "quarkblockchain",
@@ -13753,29 +13792,6 @@
     "shortName": "scai"
   },
   {
-    "name": "SecureChain Testnet",
-    "rpc": [
-      "https://testnet-rpc.securechain.ai"
-    ],
-    "faucets": [
-      "https://faucet.securechain.ai"
-    ],
-    "nativeCurrency": {
-      "name": "SCAI",
-      "symbol": "SCAI",
-      "decimals": 18
-    },
-    "chainId": 3434,
-    "explorers": [
-      {
-        "name": "SecureChain",
-        "url": "https://testnet.securechain.ai",
-        "standard": "EIP3091"
-      }
-    ],
-    "shortName": "SCAIt"
-  },
-  {
     "name": "Seele Mainnet",
     "rpc": [
       "https://rpc.seelen.pro/"
@@ -14804,28 +14820,6 @@
     "shortName": "team"
   },
   {
-    "name": "Taiko Grimsvotn L2",
-    "rpc": [
-      "https://rpc.test.taiko.xyz"
-    ],
-    "faucets": [],
-    "nativeCurrency": {
-      "name": "Ether",
-      "symbol": "ETH",
-      "decimals": 18
-    },
-    "chainId": 167005,
-    "explorers": [
-      {
-        "name": "blockscout",
-        "url": "https://explorer.test.taiko.xyz",
-        "standard": "EIP3091",
-        "iframe": true
-      }
-    ],
-    "shortName": "taiko-l2"
-  },
-  {
     "name": "Taraxa Mainnet",
     "rpc": [
       "https://rpc.mainnet.taraxa.io/"
@@ -15608,8 +15602,7 @@
         "name": "TTcoin Smart Chain Explorer",
         "url": "https://tscscan.com",
         "standard": "EIP3091",
-        "icon": "tscscan",
-        "iframe": true
+        "icon": "tscscan"
       }
     ],
     "shortName": "tc"
@@ -16475,6 +16468,29 @@
       }
     ],
     "shortName": "xdc"
+  },
+  {
+    "name": "Xgon Testnet",
+    "rpc": [
+      "https://testrpc.xgon.io"
+    ],
+    "faucets": [
+      "https://www.oklink.com/okbc-test"
+    ],
+    "nativeCurrency": {
+      "name": "Xgon Global Utility Token in testnet",
+      "symbol": "OKB",
+      "decimals": 18
+    },
+    "chainId": 195,
+    "explorers": [
+      {
+        "name": "OKLink",
+        "url": "https://www.oklink.com/okbc-test",
+        "standard": "EIP3091"
+      }
+    ],
+    "shortName": "tokb"
   },
   {
     "name": "XODEX",
