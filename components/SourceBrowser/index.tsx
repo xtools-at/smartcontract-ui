@@ -155,7 +155,7 @@ export const SourceBrowser = ({
 	const onAbiChange = useCallback(async () => {
 		if (source.startsWith("http") || source.startsWith("/")) {
 			onUrlChange(source);
-		} else {
+		} else if (source) {
 			try {
 				const jsonContent = JSON.parse(source);
 				onJsonChange(jsonContent);
