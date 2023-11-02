@@ -14,8 +14,8 @@ export const useIframeUrl = () => {
 
 	const updateIframeUrl = (
 		chain: Chain | null | undefined,
-		address: string | null | undefined,
-		txHash: string | null | undefined
+		address?: string,
+		txHash?: string
 	) => {
 		if (baseIframeUrl && chain?.explorers?.length) {
 			const explorer = chain.explorers.find((exp) => exp.iframe === true);

@@ -97,28 +97,35 @@ export default function Page() {
 
 		const chain = chains.find((chain) => chain.chainId == entry.network);
 		if (chain) {
-			log("history -> set chain");
+			log("history -> set chain", chain.chainId);
+			switchW3Chain(chain)
+				.then(() => {
+					selectChain(chain);
+					updateIframeUrl(chain, entry.address);
+				})
+				.catch(() => {
+					selectChain(selectedChain);
+					updateIframeUrl(selectedChain, address);
+				});
 		}
 
-		log("history -> address");
+		log("history -> address", entry.address);
 		setAddress(entry.address);
-
-		updateIframeUrl(chain, entry.address, null);
 
 		const func = newFunctions.find((f) => f.name === entry.function);
 		if (func) {
-			log("history -> function");
+			log("history -> function", func.name);
 			selectFunction(func);
 		}
 
-		log("history -> args");
+		log("history -> args", entry.args);
 		for (let key in entry.args) {
 			setFunctionArguments((draft: any) => {
 				draft[key] = entry.args[key];
 			});
 		}
 
-		log("history -> eth");
+		log("history -> eth", entry.eth);
 		setFunctionEth(entry.eth);
 	}, []);
 
@@ -239,7 +246,7 @@ export default function Page() {
 			const chain = chains.find((chain) => chain.chainId == w3React.chainId);
 			if (chain) {
 				selectChain(chain);
-				updateIframeUrl(chain, address, null);
+				updateIframeUrl(chain, address);
 
 				if (w3React.connector === anonymous) {
 					setSigner(signers[0]);
@@ -393,7 +400,7 @@ export default function Page() {
 
 	const setAddress = (address: string) => {
 		setAddressValue(address);
-		updateIframeUrl(selectedChain, address, null);
+		updateIframeUrl(selectedChain, address);
 	};
 
 	const selectSigner = useCallback(
