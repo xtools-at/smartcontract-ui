@@ -4413,7 +4413,8 @@
     {
       "name": "Oasis Emerald Testnet Explorer",
       "url": "https://testnet.explorer.emerald.oasis.dev",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "42262": [
@@ -4638,6 +4639,30 @@
       "url": "https://linea.l2scan.co",
       "standard": "EIP3091",
       "icon": "linea",
+      "iframe": true
+    }
+  ],
+  "60001": [
+    {
+      "name": "thinkiumscan",
+      "url": "https://test1.thinkiumscan.net",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
+  "60002": [
+    {
+      "name": "thinkiumscan",
+      "url": "https://test2.thinkiumscan.net",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
+  "60103": [
+    {
+      "name": "thinkiumscan",
+      "url": "https://test103.thinkiumscan.net",
+      "standard": "EIP3091",
       "iframe": true
     }
   ],

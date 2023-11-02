@@ -3,9 +3,9 @@ const path = require("path");
 const config = require("../config/app");
 const fetch = require("node-fetch");
 
-const BATCH_SIZE = 25;
-const BATCH_TIMEOUT = 10;
-const CALL_TIMEOUT = 15;
+const BATCH_SIZE = 35;
+const BATCH_TIMEOUT = 8;
+const CALL_TIMEOUT = 16;
 
 const main = async () => {
 	const startTime = Date.now();

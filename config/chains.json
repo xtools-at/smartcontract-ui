@@ -10610,7 +10610,8 @@
       {
         "name": "Oasis Emerald Testnet Explorer",
         "url": "https://testnet.explorer.emerald.oasis.dev",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "emerald-testnet"
@@ -15334,6 +15335,78 @@
       }
     ],
     "shortName": "TKM2"
+  },
+  {
+    "name": "Thinkium Testnet Chain 1",
+    "rpc": [
+      "https://test1.thinkiumrpc.net/"
+    ],
+    "faucets": [
+      "https://www.thinkiumdev.net/faucet"
+    ],
+    "nativeCurrency": {
+      "name": "TKM",
+      "symbol": "TKM",
+      "decimals": 18
+    },
+    "chainId": 60001,
+    "explorers": [
+      {
+        "name": "thinkiumscan",
+        "url": "https://test1.thinkiumscan.net",
+        "standard": "EIP3091",
+        "iframe": true
+      }
+    ],
+    "shortName": "TKM-test1"
+  },
+  {
+    "name": "Thinkium Testnet Chain 103",
+    "rpc": [
+      "https://test103.thinkiumrpc.net/"
+    ],
+    "faucets": [
+      "https://www.thinkiumdev.net/faucet"
+    ],
+    "nativeCurrency": {
+      "name": "TKM",
+      "symbol": "TKM",
+      "decimals": 18
+    },
+    "chainId": 60103,
+    "explorers": [
+      {
+        "name": "thinkiumscan",
+        "url": "https://test103.thinkiumscan.net",
+        "standard": "EIP3091",
+        "iframe": true
+      }
+    ],
+    "shortName": "TKM-test103"
+  },
+  {
+    "name": "Thinkium Testnet Chain 2",
+    "rpc": [
+      "https://test2.thinkiumrpc.net/"
+    ],
+    "faucets": [
+      "https://www.thinkiumdev.net/faucet"
+    ],
+    "nativeCurrency": {
+      "name": "TKM",
+      "symbol": "TKM",
+      "decimals": 18
+    },
+    "chainId": 60002,
+    "explorers": [
+      {
+        "name": "thinkiumscan",
+        "url": "https://test2.thinkiumscan.net",
+        "standard": "EIP3091",
+        "iframe": true
+      }
+    ],
+    "shortName": "TKM-test2"
   },
   {
     "name": "ThunderCore Mainnet",

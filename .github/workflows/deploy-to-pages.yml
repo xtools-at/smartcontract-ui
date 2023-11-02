@@ -13,6 +13,7 @@ on:
       - "COPYING"
       - "docs/**"
       - ".vscode/**"
+      - "scripts/**"
 
 jobs:
   build-push:
