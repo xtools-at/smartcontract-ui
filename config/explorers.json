@@ -1080,7 +1080,8 @@
       "name": "orderlyscout",
       "url": "https://explorer.orderly.network",
       "icon": "blockscout",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "295": [
@@ -1360,14 +1361,16 @@
       "name": "blockscout",
       "url": "https://explorer.publicgoods.network",
       "icon": "blockscout",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "444": [
     {
       "name": "Synapse Chain Sepolia",
       "url": "https://sepolia.synapsescan.com",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "456": [
@@ -1686,7 +1689,8 @@
     {
       "name": "modescout",
       "url": "https://sepolia.explorer.mode.network",
-      "standard": "none"
+      "standard": "none",
+      "iframe": true
     }
   ],
   "927": [
@@ -3012,7 +3016,8 @@
       "name": "basescout",
       "url": "https://explorerl2new-orderly-l2-4460-sepolia-8tc3sd7dvy.t.conduit.xyz",
       "icon": "blockscout",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "4689": [
@@ -3425,8 +3430,7 @@
     {
       "name": "Bitrock Testnet Explorer",
       "url": "https://testnetscan.bit-rock.io",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "7777": [
@@ -3518,8 +3522,7 @@
     {
       "name": "alphscan",
       "url": "https://explorer.alph.network",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "8848": [
@@ -4530,8 +4533,7 @@
       "name": "blockscout",
       "url": "https://blockexplorer.electroneum.com",
       "icon": "electroneum",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "54211": [
@@ -4602,7 +4604,8 @@
       "name": "blockscout",
       "url": "https://explorer.sepolia.publicgoods.network",
       "icon": "blockscout",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "59140": [
@@ -4892,8 +4895,7 @@
     {
       "name": "scoville-explorer",
       "url": "https://scoville-explorer.chiliz.com",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "88888": [
@@ -5661,7 +5663,8 @@
     {
       "name": "Zora Network Explorer",
       "url": "https://explorer.zora.energy",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "8007736": [
@@ -5918,7 +5921,8 @@
     {
       "name": "Zora Sepolia Testnet Network Explorer",
       "url": "https://sepolia.explorer.zora.energy",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "1146703430": [
@@ -6051,7 +6055,8 @@
     {
       "name": "a8scan-testnet",
       "url": "https://testnet.a8scan.io",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "4216137055": [

@@ -1274,8 +1274,7 @@
       {
         "name": "alphscan",
         "url": "https://explorer.alph.network",
-        "standard": "EIP3091",
-        "iframe": true
+        "standard": "EIP3091"
       }
     ],
     "shortName": "alph"
@@ -1543,7 +1542,8 @@
       {
         "name": "a8scan-testnet",
         "url": "https://testnet.a8scan.io",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "a8"
@@ -2547,8 +2547,7 @@
       {
         "name": "Bitrock Testnet Explorer",
         "url": "https://testnetscan.bit-rock.io",
-        "standard": "EIP3091",
-        "iframe": true
+        "standard": "EIP3091"
       }
     ],
     "shortName": "tbitrock"
@@ -3519,8 +3518,7 @@
       {
         "name": "scoville-explorer",
         "url": "https://scoville-explorer.chiliz.com",
-        "standard": "none",
-        "iframe": true
+        "standard": "none"
       }
     ],
     "shortName": "chz"
@@ -5067,8 +5065,7 @@
         "name": "blockscout",
         "url": "https://blockexplorer.electroneum.com",
         "icon": "electroneum",
-        "standard": "EIP3091",
-        "iframe": true
+        "standard": "EIP3091"
       }
     ],
     "shortName": "etn-mainnet"
@@ -9805,7 +9802,8 @@
       {
         "name": "modescout",
         "url": "https://sepolia.explorer.mode.network",
-        "standard": "none"
+        "standard": "none",
+        "iframe": true
       }
     ],
     "shortName": "modesep"
@@ -11266,7 +11264,8 @@
         "name": "orderlyscout",
         "url": "https://explorer.orderly.network",
         "icon": "blockscout",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "orderly"
@@ -11288,7 +11287,8 @@
         "name": "basescout",
         "url": "https://explorerl2new-orderly-l2-4460-sepolia-8tc3sd7dvy.t.conduit.xyz",
         "icon": "blockscout",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "orderlyl2"
@@ -11697,7 +11697,8 @@
         "name": "blockscout",
         "url": "https://explorer.publicgoods.network",
         "icon": "blockscout",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "PGN"
@@ -13931,7 +13932,8 @@
         "name": "blockscout",
         "url": "https://explorer.sepolia.publicgoods.network",
         "icon": "blockscout",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "sepPGN"
@@ -14789,7 +14791,8 @@
       {
         "name": "Synapse Chain Sepolia",
         "url": "https://sepolia.synapsescan.com",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "synapse-sepolia"
@@ -16963,7 +16966,8 @@
       {
         "name": "Zora Network Explorer",
         "url": "https://explorer.zora.energy",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "zora"
@@ -16984,7 +16988,8 @@
       {
         "name": "Zora Sepolia Testnet Network Explorer",
         "url": "https://sepolia.explorer.zora.energy",
-        "standard": "EIP3091"
+        "standard": "EIP3091",
+        "iframe": true
       }
     ],
     "shortName": "zsep"

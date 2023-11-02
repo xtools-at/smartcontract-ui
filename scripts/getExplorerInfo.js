@@ -3,9 +3,9 @@ const path = require("path");
 const config = require("../config/app");
 const fetch = require("node-fetch");
 
-const BATCH_SIZE = 35;
-const BATCH_TIMEOUT = 8;
-const CALL_TIMEOUT = 16;
+const BATCH_SIZE = 50;
+const BATCH_TIMEOUT = 6;
+const CALL_TIMEOUT = 14;
 
 const main = async () => {
 	const startTime = Date.now();
@@ -31,8 +31,6 @@ const main = async () => {
 				chain.rpc &&
 				chain.rpc.length > 0
 			) {
-				if (chain.title && chain.title.length < 50) chain.name = chain.title;
-
 				rawChains.push(chain);
 			}
 		} catch (e) {}
@@ -77,22 +75,30 @@ const main = async () => {
 
 				promises.push(
 					fetch(explorer.url, {
+						method: "HEAD",
 						timeout: CALL_TIMEOUT * 1000,
 					})
 						.then((res) => {
-							if (
-								!res.headers.raw()["x-frame-options"] &&
-								!res.headers.raw()["X-Frame-Options"]
-							) {
+							const headers = res.headers.raw();
+							let allowsIframes = true;
+
+							if (headers["x-frame-options"] || headers["X-Frame-Options"]) {
+								allowsIframes = false;
+							}
+							const csp =
+								headers["content-security-policy"] ||
+								headers["Content-Security-Policy"];
+							if (csp && csp.length) {
+								csp.forEach((p) => {
+									if (p.includes("frame-ancestors")) allowsIframes = false;
+								});
+							}
+
+							if (allowsIframes === true) {
 								chains[i].explorers[j].iframe = true;
 							}
 
-							console.log(
-								"iframe:",
-								!!chains[i].explorers[j].iframe,
-								chain.name,
-								explorer.url
-							);
+							console.log("iframe:", allowsIframes, chain.name, explorer.url);
 						})
 						.catch(() => {
 							chains[i].explorers[j].failed = true;
