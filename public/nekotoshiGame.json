@@ -1,0 +1,840 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "target",
+				"type": "address"
+			}
+		],
+		"name": "AddressEmptyCode",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "implementation",
+				"type": "address"
+			}
+		],
+		"name": "ERC1967InvalidImplementation",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "ERC1967NonPayable",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "FailedInnerCall",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "InvalidInitialization",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "NotInitializing",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "OwnableInvalidOwner",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "OwnableUnauthorizedAccount",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "ReentrancyGuardReentrantCall",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "UUPSUnauthorizedCallContext",
+		"type": "error"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "slot",
+				"type": "bytes32"
+			}
+		],
+		"name": "UUPSUnsupportedProxiableUUID",
+		"type": "error"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Activated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint64",
+				"name": "version",
+				"type": "uint64"
+			}
+		],
+		"name": "Initialized",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "implementation",
+				"type": "address"
+			}
+		],
+		"name": "Upgraded",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "UPGRADE_INTERFACE_VERSION",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "activate",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "claimPrize",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint8",
+				"name": "category",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "_type",
+				"type": "uint8"
+			}
+		],
+		"name": "doAction",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getGameConfig",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint32",
+						"name": "lifeExpectancy",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "ageMax",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "ageMin",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32[]",
+						"name": "ageDurations",
+						"type": "uint32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "earnAgeMin",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "earnAgeMax",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "earnRate",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startCoins",
+						"type": "uint256"
+					},
+					{
+						"internalType": "int32",
+						"name": "attributeMax",
+						"type": "int32"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "int32[]",
+								"name": "params",
+								"type": "int32[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "cost",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct PetGameEngine.Action[][]",
+						"name": "actions",
+						"type": "tuple[][]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "int32",
+								"name": "defaultValue",
+								"type": "int32"
+							},
+							{
+								"internalType": "int32",
+								"name": "decayRate",
+								"type": "int32"
+							},
+							{
+								"internalType": "int32",
+								"name": "threshold",
+								"type": "int32"
+							}
+						],
+						"internalType": "struct PetGameEngine.Attribute[]",
+						"name": "attributes",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "uint16[]",
+						"name": "appearanceVariations",
+						"type": "uint16[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "token",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "decimalsOrId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint8",
+								"name": "tokenType",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct PetGameEngine.BuyOption[]",
+						"name": "buyOptions",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "bool",
+						"name": "initialized",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct PetGameEngine.GameConfig",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "getPet",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dob",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastUpdate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "age",
+						"type": "uint32"
+					},
+					{
+						"internalType": "int32[]",
+						"name": "attributeValues",
+						"type": "int32[]"
+					},
+					{
+						"internalType": "uint16[]",
+						"name": "appearanceValues",
+						"type": "uint16[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "coins",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "dead",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "prizeClaimed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct PetGameEngine.Pet",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenContract",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint32",
+						"name": "lifeExpectancy",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "ageMax",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "ageMin",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32[]",
+						"name": "ageDurations",
+						"type": "uint32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "earnAgeMin",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "earnAgeMax",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "earnRate",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startCoins",
+						"type": "uint256"
+					},
+					{
+						"internalType": "int32",
+						"name": "attributeMax",
+						"type": "int32"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "int32[]",
+								"name": "params",
+								"type": "int32[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "cost",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct PetGameEngine.Action[][]",
+						"name": "actions",
+						"type": "tuple[][]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "int32",
+								"name": "defaultValue",
+								"type": "int32"
+							},
+							{
+								"internalType": "int32",
+								"name": "decayRate",
+								"type": "int32"
+							},
+							{
+								"internalType": "int32",
+								"name": "threshold",
+								"type": "int32"
+							}
+						],
+						"internalType": "struct PetGameEngine.Attribute[]",
+						"name": "attributes",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "uint16[]",
+						"name": "appearanceVariations",
+						"type": "uint16[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "token",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "decimalsOrId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint8",
+								"name": "tokenType",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct PetGameEngine.BuyOption[]",
+						"name": "buyOptions",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "bool",
+						"name": "initialized",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct PetGameEngine.GameConfig",
+				"name": "gameConfig",
+				"type": "tuple"
+			}
+		],
+		"name": "initialize",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "option",
+				"type": "uint8"
+			}
+		],
+		"name": "mintPet",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "proxiableUUID",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "setName",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenContract",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint32",
+						"name": "lifeExpectancy",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "ageMax",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "ageMin",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32[]",
+						"name": "ageDurations",
+						"type": "uint32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "earnAgeMin",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "earnAgeMax",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "earnRate",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startCoins",
+						"type": "uint256"
+					},
+					{
+						"internalType": "int32",
+						"name": "attributeMax",
+						"type": "int32"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "int32[]",
+								"name": "params",
+								"type": "int32[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "cost",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct PetGameEngine.Action[][]",
+						"name": "actions",
+						"type": "tuple[][]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "int32",
+								"name": "defaultValue",
+								"type": "int32"
+							},
+							{
+								"internalType": "int32",
+								"name": "decayRate",
+								"type": "int32"
+							},
+							{
+								"internalType": "int32",
+								"name": "threshold",
+								"type": "int32"
+							}
+						],
+						"internalType": "struct PetGameEngine.Attribute[]",
+						"name": "attributes",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "uint16[]",
+						"name": "appearanceVariations",
+						"type": "uint16[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "token",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "decimalsOrId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint8",
+								"name": "tokenType",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct PetGameEngine.BuyOption[]",
+						"name": "buyOptions",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "bool",
+						"name": "initialized",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct PetGameEngine.GameConfig",
+				"name": "gameConfig",
+				"type": "tuple"
+			}
+		],
+		"name": "setup",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newImplementation",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes",
+				"name": "data",
+				"type": "bytes"
+			}
+		],
+		"name": "upgradeToAndCall",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "receive"
+	}
+]
