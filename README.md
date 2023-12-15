@@ -91,7 +91,7 @@ The tool can fetch ABIs of verified contracts from [Etherscan](https://etherscan
 
 ### **Select network**
 
-Next thing to configure is the blockchain network where the contract was deployed. There are more than <b>260 chains</b> supported.
+Next thing to configure is the blockchain network where the contract was deployed. There are more than <b>600 chains</b> supported.
 
 ![Network](./docs/network.png)
 

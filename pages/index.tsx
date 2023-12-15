@@ -990,7 +990,7 @@ export default function Page() {
 								for{" "}
 								<Link
 									color="inherit"
-									href="https://os.onbeam.com"
+									href="https://onbeam.com"
 									target="_blank"
 									rel="noopener"
 								>
