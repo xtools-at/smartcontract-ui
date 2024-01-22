@@ -20,6 +20,8 @@ module.exports = {
 		1, 5, 11155111,
 		// AVAX
 		43114, 43113,
+		// Imtbl zkEVM
+		13371, 13473,
 		// Polygon
 		137, 80001,
 		// BSC

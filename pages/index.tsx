@@ -970,15 +970,7 @@ export default function Page() {
 								color="text.secondary"
 								align="center"
 							>
-								<Link
-									color="inherit"
-									href="https://github.com/MartinPham/smartcontract-ui"
-									target="_blank"
-									rel="noopener"
-								>
-									Forked
-								</Link>{" "}
-								by{" "}
+								Forked by{" "}
 								<Link
 									color="inherit"
 									href="https://github.com/xtools-at"
