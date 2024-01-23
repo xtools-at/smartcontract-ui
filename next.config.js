@@ -15,7 +15,10 @@ module.exports = {
 		});
 		const byName = chains.map((chain) => {
 			return {
-				source: `/${chain.name.toLowerCase().replace(" ", "-")}`,
+				source: `/${chain.name
+					.toLowerCase()
+					.replace(" ", "-")
+					.replace(":", "-")}`,
 				destination: `/?network=${chain.chainId}`,
 				permanent: true,
 			};
@@ -25,7 +28,10 @@ module.exports = {
 			.filter((chain) => !!chain.shortName)
 			.map((chain) => {
 				return {
-					source: `/${chain.shortName.toLowerCase().replace(" ", "-")}`,
+					source: `/${chain.shortName
+						.toLowerCase()
+						.replace(" ", "-")
+						.replace(":", "-")}`,
 					destination: `/?network=${chain.chainId}`,
 					permanent: true,
 				};
