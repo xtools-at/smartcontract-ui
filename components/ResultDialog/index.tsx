@@ -88,9 +88,11 @@ export const ResultDialog = ({
 													sx={{
 														overflow: "auto",
 													}}
-													onClick={() => copyText(result.data)}
+													onClick={() => copyText(result.data.toString())}
 												>
-													<ListItemText primary={result.data} />
+													<ListItemText
+														primary={(result.data as any).toString()}
+													/>
 												</ListItemButton>
 											);
 										} else {

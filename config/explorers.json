@@ -77,8 +77,7 @@
     {
       "name": "flarescan",
       "url": "https://flarescan.com",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "16": [
@@ -125,22 +124,6 @@
     {
       "name": "Cronos Explorer",
       "url": "https://explorer.cronos.org",
-      "standard": "none",
-      "iframe": true
-    }
-  ],
-  "26": [
-    {
-      "name": "Genesis L1 testnet explorer",
-      "url": "https://testnet.genesisl1.org",
-      "standard": "none",
-      "iframe": true
-    }
-  ],
-  "29": [
-    {
-      "name": "Genesis L1 blockchain explorer",
-      "url": "https://explorer.genesisl1.org",
       "standard": "none",
       "iframe": true
     }
@@ -226,7 +209,8 @@
     {
       "name": "subscan",
       "url": "https://pangolin.subscan.io",
-      "standard": "none"
+      "standard": "none",
+      "iframe": true
     }
   ],
   "44": [
@@ -234,6 +218,14 @@
       "name": "subscan",
       "url": "https://crab.subscan.io",
       "standard": "none"
+    }
+  ],
+  "45": [
+    {
+      "name": "subscan",
+      "url": "https://pangoro.subscan.io",
+      "standard": "none",
+      "iframe": true
     }
   ],
   "46": [
@@ -472,13 +464,6 @@
       "name": "blockscout",
       "url": "https://blockscout.com/poa/sokol",
       "icon": "blockscout",
-      "standard": "EIP3091"
-    }
-  ],
-  "79": [
-    {
-      "name": "zenith scan",
-      "url": "https://scan.zenithchain.co",
       "standard": "EIP3091"
     }
   ],
@@ -760,14 +745,6 @@
       "iframe": true
     }
   ],
-  "138": [
-    {
-      "name": "Quorum Explorer",
-      "url": "https://public-0138.defi-oracle.io",
-      "standard": "none",
-      "iframe": true
-    }
-  ],
   "139": [
     {
       "name": "wikiwoop",
@@ -806,8 +783,7 @@
       "name": "TenetScan Testnet",
       "url": "https://testnet.tenetscan.io",
       "icon": "tenet",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "167": [
@@ -1012,14 +988,6 @@
       "iframe": true
     }
   ],
-  "242": [
-    {
-      "name": "plgscan",
-      "url": "https://www.plgscan.com",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "246": [
     {
       "name": "blockscout",
@@ -1068,15 +1036,6 @@
       "iframe": true
     }
   ],
-  "262": [
-    {
-      "name": "Surnet Explorer",
-      "url": "https://explorer.surnet.org",
-      "icon": "SUR",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "271": [
     {
       "name": "EgonCoin Mainnet",
@@ -1096,14 +1055,12 @@
     {
       "name": "Bobascan",
       "url": "https://bobascan.com",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     },
     {
       "name": "Blockscout",
       "url": "https://blockexplorer.boba.network",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "291": [
@@ -1405,7 +1362,16 @@
     {
       "name": "Synapse Chain Sepolia",
       "url": "https://sepolia.synapsescan.com",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
+  "456": [
+    {
+      "name": "ARZIO Scan",
+      "url": "https://scan.arzio.co",
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "462": [
@@ -1478,14 +1444,6 @@
       "iframe": true
     }
   ],
-  "542": [
-    {
-      "name": "PAWCHAIN Testnet",
-      "url": "https://pawscan.io",
-      "standard": "none",
-      "iframe": true
-    }
-  ],
   "568": [
     {
       "name": "dogechain testnet explorer",
@@ -1506,8 +1464,7 @@
     {
       "name": "MetaExplorer",
       "url": "https://explorer.metatime.com",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "592": [
@@ -1522,14 +1479,6 @@
       "url": "https://blockscout.com/astar",
       "icon": "blockscout",
       "standard": "EIP3091"
-    }
-  ],
-  "595": [
-    {
-      "name": "blockscout",
-      "url": "https://blockscout.mandala.aca-staging.network",
-      "standard": "EIP3091",
-      "iframe": true
     }
   ],
   "596": [
@@ -1593,8 +1542,7 @@
     {
       "name": "Endurance Scan",
       "url": "https://explorer.endurance.fusionist.io",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "653": [
@@ -1731,14 +1679,6 @@
       "iframe": true
     }
   ],
-  "868": [
-    {
-      "name": "FSCScan",
-      "url": "https://explorer.fantasiachain.com",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "919": [
     {
       "name": "modescout",
@@ -1854,15 +1794,6 @@
       "iframe": true
     }
   ],
-  "1004": [
-    {
-      "name": "test-ektascan",
-      "url": "https://test.ektascan.io",
-      "icon": "ekta",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "1028": [
     {
       "name": "testbttcscan",
@@ -1876,14 +1807,6 @@
       "name": "Conflux Scan",
       "url": "https://evm.confluxscan.net",
       "standard": "none",
-      "iframe": true
-    }
-  ],
-  "1031": [
-    {
-      "name": "proxy network testnet",
-      "url": "http://testnet-explorer.theproxy.network",
-      "standard": "EIP3091",
       "iframe": true
     }
   ],
@@ -1984,13 +1907,6 @@
       "iframe": true
     }
   ],
-  "1117": [
-    {
-      "name": "Dogcoin",
-      "url": "https://explorer.dogcoin.network",
-      "standard": "EIP3091"
-    }
-  ],
   "1133": [
     {
       "name": "MetaScan",
@@ -2028,15 +1944,6 @@
       "name": "popcateum explorer",
       "url": "https://explorer.popcateum.org",
       "standard": "none",
-      "iframe": true
-    }
-  ],
-  "1214": [
-    {
-      "name": "Enter Explorer - Expenter",
-      "url": "https://explorer.entercoin.net",
-      "icon": "enter",
-      "standard": "EIP3091",
       "iframe": true
     }
   ],
@@ -2333,8 +2240,7 @@
       "name": "RUBY Smart Chain MAINNET Explorer",
       "icon": "ruby",
       "url": "https://rubyscan.net",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "1875": [
@@ -2364,8 +2270,7 @@
     {
       "name": "Bitci Explorer",
       "url": "https://bitciexplorer.com",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "1908": [
@@ -2396,8 +2301,7 @@
       "name": "RUBY Smart Chain Testnet Explorer",
       "icon": "ruby",
       "url": "https://testnet.rubyscan.net",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "1945": [
@@ -2421,8 +2325,7 @@
     {
       "name": "metaexplorer-eleanor",
       "url": "https://explorer.metatime.com/eleanor",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "1969": [
@@ -2487,8 +2390,7 @@
     {
       "name": "Kyotoscan",
       "url": "https://testnet.kyotoscan.io",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "2000": [
@@ -2551,6 +2453,13 @@
       "name": "Edgscan by Bharathcoorg",
       "url": "https://edgscan.live",
       "standard": "EIP3091",
+      "iframe": true
+    },
+    {
+      "name": "Subscan",
+      "url": "https://edgeware.subscan.io",
+      "standard": "none",
+      "icon": "subscan",
       "iframe": true
     }
   ],
@@ -2639,6 +2548,20 @@
       "iframe": true
     }
   ],
+  "2100": [
+    {
+      "name": "Ecoball Explorer",
+      "url": "https://scan.ecoball.org",
+      "standard": "EIP3091"
+    }
+  ],
+  "2101": [
+    {
+      "name": "Ecoball Testnet Explorer",
+      "url": "https://espuma-scan.ecoball.org",
+      "standard": "EIP3091"
+    }
+  ],
   "2109": [
     {
       "name": "blockscout",
@@ -2678,8 +2601,7 @@
       "name": "blockscout",
       "url": "https://explorer.moonsama.com",
       "icon": "blockscout",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "2203": [
@@ -2688,14 +2610,6 @@
       "url": "https://explorer.bitcoinevm.com",
       "icon": "ebtc",
       "standard": "none"
-    }
-  ],
-  "2213": [
-    {
-      "name": "Evanesco Explorer",
-      "url": "https://explorer.evanesco.org",
-      "standard": "none",
-      "iframe": true
     }
   ],
   "2221": [
@@ -2726,14 +2640,6 @@
     {
       "name": "Subscan",
       "url": "https://krest.subscan.io",
-      "standard": "none"
-    }
-  ],
-  "2323": [
-    {
-      "name": "SOMA Testnet Explorer",
-      "icon": "soma",
-      "url": "https://testnet.somascan.io",
       "standard": "none"
     }
   ],
@@ -2793,7 +2699,8 @@
     {
       "name": "REDLC Explorer",
       "url": "https://redlightscan.finance",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "2625": [
@@ -2823,8 +2730,7 @@
     {
       "name": "Blockscout",
       "url": "https://testnet.bobascan.com",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "2999": [
@@ -2855,8 +2761,7 @@
       "name": "PLAYA3ULL GAMES Explorer",
       "url": "https://3011.routescan.io",
       "icon": "playa3ull",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "3068": [
@@ -2894,8 +2799,7 @@
     {
       "name": "SecureChain",
       "url": "https://testnet.securechain.ai",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "3500": [
@@ -2936,13 +2840,6 @@
       "standard": "EIP3091"
     }
   ],
-  "3637": [
-    {
-      "name": "Botanix",
-      "url": "https://btxtestchain.com",
-      "standard": "EIP3091"
-    }
-  ],
   "3639": [
     {
       "name": "iChainscan",
@@ -2963,22 +2860,7 @@
     {
       "name": "Empire Explorer",
       "url": "https://explorer.empirenetwork.io",
-      "standard": "none",
-      "iframe": true
-    }
-  ],
-  "3698": [
-    {
-      "name": "SenjePowers",
-      "url": "https://testnet.senjepowersscan.com",
-      "standard": "EIP3091"
-    }
-  ],
-  "3699": [
-    {
-      "name": "SenjePowers",
-      "url": "https://senjepowersscan.com",
-      "standard": "EIP3091"
+      "standard": "none"
     }
   ],
   "3737": [
@@ -3066,8 +2948,7 @@
     {
       "name": "Musterscan",
       "url": "https://muster-explorer.alt.technology",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "4090": [
@@ -3218,8 +3099,7 @@
     {
       "name": "Mantle Testnet Explorer",
       "url": "https://explorer.testnet.mantle.xyz",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "5002": [
@@ -3261,14 +3141,6 @@
       "iframe": true
     }
   ],
-  "5177": [
-    {
-      "name": "TLChain Explorer",
-      "url": "https://explorer.tlchain.network",
-      "standard": "none",
-      "iframe": true
-    }
-  ],
   "5234": [
     {
       "name": "Subscan",
@@ -3281,8 +3153,7 @@
     {
       "name": "Vexascan-EVM-TestNet",
       "url": "https://testnet.vexascan.com/evmexplorer",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "5551": [
@@ -3358,8 +3229,7 @@
     {
       "name": "wegoscan2",
       "url": "https://scan2.wegochain.io",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "6065": [
@@ -3376,21 +3246,6 @@
       "url": "https://explorer.tresleches.finance",
       "icon": "treslechesexplorer",
       "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
-  "6102": [
-    {
-      "name": "Cascadia EVM Explorer",
-      "url": "https://explorer.cascadia.foundation",
-      "standard": "none",
-      "icon": "cascadia"
-    },
-    {
-      "name": "Cascadia Cosmos Explorer",
-      "url": "https://validator.cascadia.foundation",
-      "standard": "none",
-      "icon": "cascadia",
       "iframe": true
     }
   ],
@@ -3423,8 +3278,7 @@
       "name": "FOX Testnet Explorer",
       "icon": "fox",
       "url": "https://testnet.foxscan.app",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "6626": [
@@ -3537,13 +3391,6 @@
       "iframe": true
     }
   ],
-  "7171": [
-    {
-      "name": "Bitrock Explorer",
-      "url": "https://explorer.bit-rock.io",
-      "standard": "EIP3091"
-    }
-  ],
   "7332": [
     {
       "name": "Horizen EON Block Explorer",
@@ -3637,14 +3484,6 @@
       "iframe": true
     }
   ],
-  "7771": [
-    {
-      "name": "Bitrock Testnet Explorer",
-      "url": "https://testnetscan.bit-rock.io",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "7777": [
     {
       "name": "avascan",
@@ -3681,14 +3520,6 @@
       "url": "https://qng-testnet.meerscan.io",
       "standard": "none",
       "iframe": true
-    }
-  ],
-  "8181": [
-    {
-      "name": "Testnet BeOne Chain",
-      "url": "https://testnet.beonescan.com",
-      "icon": "beonechain",
-      "standard": "none"
     }
   ],
   "8192": [
@@ -3816,15 +3647,6 @@
       "iframe": true
     }
   ],
-  "8898": [
-    {
-      "name": "mmtscan",
-      "url": "https://mmtscan.io",
-      "standard": "EIP3091",
-      "icon": "mmt",
-      "iframe": true
-    }
-  ],
   "8899": [
     {
       "name": "JIBCHAIN Explorer",
@@ -3857,21 +3679,6 @@
       "standard": "none",
       "icon": "evmos",
       "iframe": true
-    }
-  ],
-  "9223": [
-    {
-      "name": "Codefin Net Explorer",
-      "url": "https://explorer.codefin.pro",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
-  "9339": [
-    {
-      "name": "Dogcoin",
-      "url": "https://testnet.dogcoin.network",
-      "standard": "EIP3091"
     }
   ],
   "9395": [
@@ -3911,8 +3718,7 @@
     {
       "name": "Boba BNB Testnet block explorer",
       "url": "https://blockexplorer.testnet.bnb.boba.network",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "9768": [
@@ -3937,8 +3743,7 @@
       "name": "IMPERIUM TESTNET Explorer",
       "icon": "timp",
       "url": "https://network.impscan.com",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "9819": [
@@ -3946,8 +3751,7 @@
       "name": "IMPERIUM Explorer",
       "icon": "imp",
       "url": "https://impscan.com",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "9888": [
@@ -3955,14 +3759,6 @@
       "name": "Dogelayer mainnet explorer",
       "url": "https://dl-explorer.dogelayer.org",
       "standard": "EIP3091"
-    }
-  ],
-  "9977": [
-    {
-      "name": "Mind Chain explorer",
-      "url": "https://testnet.mindscan.info",
-      "standard": "EIP3091",
-      "iframe": true
     }
   ],
   "9980": [
@@ -3978,6 +3774,12 @@
       "url": "https://polkadot.js.org/apps/?rpc=wss://wsspc1-qa.agung.peaq.network#/explorer",
       "standard": "none",
       "iframe": true
+    },
+    {
+      "name": "Subscan",
+      "url": "https://agung.subscan.io",
+      "standard": "none",
+      "iframe": true
     }
   ],
   "9996": [
@@ -3985,15 +3787,6 @@
       "name": "Mind Chain explorer",
       "url": "https://mainnet.mindscan.info",
       "standard": "EIP3091"
-    }
-  ],
-  "9997": [
-    {
-      "name": "blockscout",
-      "url": "https://testnet-rollup-explorer.altlayer.io",
-      "icon": "blockscout",
-      "standard": "EIP3091",
-      "iframe": true
     }
   ],
   "10024": [
@@ -4116,27 +3909,11 @@
       "iframe": true
     }
   ],
-  "11612": [
-    {
-      "name": "Sardis",
-      "url": "https://testnet.sardisnetwork.com",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "11888": [
     {
       "name": "SanR Chain Explorer",
       "url": "https://sanrchain-explorer.santiment.net",
       "standard": "none",
-      "iframe": true
-    }
-  ],
-  "11891": [
-    {
-      "name": "Polygon Supernet Arianee Explorer",
-      "url": "https://polygonsupernet.explorer.arianee.net",
-      "standard": "EIP3091",
       "iframe": true
     }
   ],
@@ -4212,14 +3989,6 @@
       "url": "https://explorer.testnet.immutable.com",
       "standard": "EIP3091",
       "icon": "immutable"
-    }
-  ],
-  "15551": [
-    {
-      "name": "loopscan",
-      "url": "http://explorer.mainnetloop.com",
-      "standard": "none",
-      "iframe": true
     }
   ],
   "15557": [
@@ -4331,7 +4100,8 @@
     {
       "name": "BTCIXScan",
       "url": "https://btcixscan.com",
-      "standard": "none"
+      "standard": "none",
+      "iframe": true
     }
   ],
   "20001": [
@@ -4411,6 +4181,14 @@
     {
       "name": "GoldXChain Testnet Explorer",
       "url": "https://testnet-explorer.goldxchain.io",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
+  "22776": [
+    {
+      "name": "mapscan",
+      "url": "https://mapscan.io",
       "standard": "EIP3091",
       "iframe": true
     }
@@ -4637,8 +4415,7 @@
       "name": "Q explorer",
       "url": "https://explorer.q.org",
       "icon": "q",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "35443": [
@@ -4782,16 +4559,14 @@
     {
       "name": "snowtrace",
       "url": "https://testnet.snowtrace.io",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "43114": [
     {
       "name": "snowtrace",
       "url": "https://snowtrace.io",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "43851": [
@@ -4807,6 +4582,13 @@
     {
       "name": "Alfajoresscan",
       "url": "https://alfajores.celoscan.io",
+      "standard": "EIP3091"
+    }
+  ],
+  "45510": [
+    {
+      "name": "Deelance Mainnet Explorer",
+      "url": "https://deescan.com",
       "standard": "EIP3091"
     }
   ],
@@ -4867,19 +4649,13 @@
       "iframe": true
     }
   ],
-  "51712": [
-    {
-      "name": "Sardis",
-      "url": "https://contract-mainnet.sardisnetwork.com",
-      "standard": "EIP3091"
-    }
-  ],
   "52014": [
     {
       "name": "blockscout",
       "url": "https://blockexplorer.electroneum.com",
       "icon": "electroneum",
-      "standard": "EIP3091"
+      "standard": "EIP3091",
+      "iframe": true
     }
   ],
   "54211": [
@@ -4925,8 +4701,7 @@
     {
       "name": "Boba BNB block explorer",
       "url": "https://blockexplorer.bnb.boba.network",
-      "standard": "none",
-      "iframe": true
+      "standard": "none"
     }
   ],
   "56789": [
@@ -4990,34 +4765,10 @@
       "iframe": true
     }
   ],
-  "59971": [
+  "61800": [
     {
-      "name": "Genesys Scan",
-      "url": "https://genesysscan.io",
-      "icon": "genesyscode",
-      "standard": "none"
-    }
-  ],
-  "60001": [
-    {
-      "name": "thinkiumscan",
-      "url": "https://test1.thinkiumscan.net",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
-  "60002": [
-    {
-      "name": "thinkiumscan",
-      "url": "https://test2.thinkiumscan.net",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
-  "60103": [
-    {
-      "name": "thinkiumscan",
-      "url": "https://test103.thinkiumscan.net",
+      "name": "AxelChain Dev-Net Explorer",
+      "url": "https://devexplorer2.viacube.com",
       "standard": "EIP3091",
       "iframe": true
     }
@@ -5069,42 +4820,10 @@
       "iframe": true
     }
   ],
-  "66988": [
-    {
-      "name": "JanusNetwork Testnet Explorer",
-      "url": "https://beta.scan.janusnetwork.io",
-      "standard": "none",
-      "iframe": true
-    }
-  ],
   "68770": [
     {
       "name": "DM2Verse Explorer",
       "url": "https://explorer.dm2verse.dmm.com",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
-  "70001": [
-    {
-      "name": "thinkiumscan",
-      "url": "https://chain1.thinkiumscan.net",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
-  "70002": [
-    {
-      "name": "thinkiumscan",
-      "url": "https://chain2.thinkiumscan.net",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
-  "70103": [
-    {
-      "name": "thinkiumscan",
-      "url": "https://chain103.thinkiumscan.net",
       "standard": "EIP3091",
       "iframe": true
     }
@@ -5132,13 +4851,6 @@
       "url": "https://v1.gwscan.com",
       "standard": "none",
       "iframe": true
-    }
-  ],
-  "72992": [
-    {
-      "name": "GrokScan",
-      "url": "https://mainnet-explorer.grokchain.dev",
-      "standard": "none"
     }
   ],
   "73927": [
@@ -5257,13 +4969,6 @@
       "iframe": true
     }
   ],
-  "88880": [
-    {
-      "name": "scoville-explorer",
-      "url": "https://scoville-explorer.chiliz.com",
-      "standard": "none"
-    }
-  ],
   "88888": [
     {
       "name": "ivarscan",
@@ -5357,6 +5062,13 @@
     {
       "name": "quarkchain-mainnet",
       "url": "https://mainnet.quarkchain.io/7",
+      "standard": "EIP3091"
+    }
+  ],
+  "101010": [
+    {
+      "name": "Soverun",
+      "url": "https://testnet.soverun.com",
       "standard": "EIP3091"
     }
   ],
@@ -5518,15 +5230,6 @@
       "name": "Mythical Chain Explorer",
       "url": "https://explorer.mythicalgames.com",
       "icon": "mythical",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
-  "202020": [
-    {
-      "name": "DSC Explorer Testnet",
-      "url": "https://testnet.explorer.decimalchain.com",
-      "icon": "dsc",
       "standard": "EIP3091",
       "iframe": true
     }
@@ -5693,8 +5396,7 @@
       "name": "Bitfinity Block Explorer",
       "url": "https://explorer.bitfinity.network",
       "icon": "bitfinity",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "373737": [
@@ -5710,8 +5412,7 @@
     {
       "name": "metalscan",
       "url": "https://metalscan.io",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "381932": [
@@ -5826,6 +5527,14 @@
       "iframe": true
     }
   ],
+  "535037": [
+    {
+      "name": "bescscan",
+      "url": "https://Bescscan.io",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
   "622277": [
     {
       "name": "hypra",
@@ -5833,6 +5542,13 @@
       "icon": "blockscout",
       "standard": "EIP3091",
       "iframe": true
+    }
+  ],
+  "641230": [
+    {
+      "name": "brnkscan",
+      "url": "https://brnkscan.bearnetwork.net",
+      "standard": "EIP3091"
     }
   ],
   "651940": [
@@ -6069,8 +5785,7 @@
       "name": "blockscout",
       "url": "https://xcap-mainnet.explorer.xcap.network",
       "icon": "blockscout",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "9322253": [
@@ -6078,8 +5793,7 @@
       "name": "blockscout",
       "url": "https://xcap-milvine.explorer.xcap.network",
       "icon": "blockscout",
-      "standard": "EIP3091",
-      "iframe": true
+      "standard": "EIP3091"
     }
   ],
   "10067275": [
@@ -6163,6 +5877,15 @@
     {
       "name": "Excelon explorer",
       "url": "https://explorer.excelon.io",
+      "standard": "EIP3091",
+      "iframe": true
+    }
+  ],
+  "27082017": [
+    {
+      "name": "exlscan",
+      "url": "https://testnet-explorer.exlscan.com",
+      "icon": "exl",
       "standard": "EIP3091",
       "iframe": true
     }
@@ -6293,35 +6016,11 @@
       "iframe": true
     }
   ],
-  "344106930": [
-    {
-      "name": "Blockscout",
-      "url": "https://staging-utter-unripe-menkar.explorer.staging-v3.skalenodes.com",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
-  "476158412": [
-    {
-      "name": "Blockscout",
-      "url": "https://staging-legal-crazy-castor.explorer.staging-v3.skalenodes.com",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "486217935": [
     {
       "name": "Blockscout",
       "url": "https://devnet-explorer.gather.network",
       "standard": "none",
-      "iframe": true
-    }
-  ],
-  "503129905": [
-    {
-      "name": "Blockscout",
-      "url": "https://staging-faint-slimy-achird.explorer.staging-v3.skalenodes.com",
-      "standard": "EIP3091",
       "iframe": true
     }
   ],
@@ -6372,15 +6071,6 @@
       "iframe": true
     }
   ],
-  "1351057110": [
-    {
-      "name": "Blockscout",
-      "url": "https://staging-fast-active-bellatrix.explorer.staging-v3.skalenodes.com",
-      "icon": "chaos",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
   "1380996178": [
     {
       "name": "RaptorChain Explorer",
@@ -6394,14 +6084,6 @@
     {
       "name": "Blockscout",
       "url": "https://green-giddy-denebola.explorer.mainnet.skalenodes.com",
-      "standard": "EIP3091",
-      "iframe": true
-    }
-  ],
-  "1517929550": [
-    {
-      "name": "Blockscout",
-      "url": "https://staging-aware-chief-gianfar.explorer.staging-v3.skalenodes.com",
       "standard": "EIP3091",
       "iframe": true
     }
