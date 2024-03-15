@@ -41,7 +41,7 @@
 		"build": "next build && next export",
 		"start": "next start",
 		"chainlist": "node scripts/buildChainList",
-		"chainlist:update": "git submodule update && yarn chainlist",
+		"chainlist:update": "git submodule update --remote; cd config/chainlist; git pull origin master; cd ../../; yarn chainlist",
 		"explorer": "node scripts/getExplorerInfo && yarn chainlist",
 		"update": "yarn chainlist:update && yarn explorer"
 	},

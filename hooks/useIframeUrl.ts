@@ -9,6 +9,8 @@ export const useIframeUrl = () => {
 	const reset = () => {
 		if (baseIframeUrl && iframeUrl !== baseIframeUrl) {
 			setIframeUrl(baseIframeUrl);
+		} else if (!baseIframeUrl) {
+			setIframeUrl("");
 		}
 	};
 

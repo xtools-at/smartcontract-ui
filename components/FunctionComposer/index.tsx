@@ -463,6 +463,21 @@ export const FunctionComposer = ({
 											<TextField margin="normal" {...props} />
 										</Tooltip>
 									);
+								} else if (input.type === "bool") {
+									return (
+										<Tooltip arrow title="Use 1 and 0 for 'true' and 'false'">
+											<TextField margin="normal" {...props} />
+										</Tooltip>
+									);
+								} else if (input.type === "bytes") {
+									return (
+										<Tooltip
+											arrow
+											title="Hexadecimal value - use '0x' if empty"
+										>
+											<TextField margin="normal" {...props} />
+										</Tooltip>
+									);
 								} else {
 									return <TextField margin="normal" {...props} />;
 								}
