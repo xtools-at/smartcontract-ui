@@ -59,4 +59,3 @@ jobs:
         with:
           name: build
           path: .build
-					if-no-files-found: error
