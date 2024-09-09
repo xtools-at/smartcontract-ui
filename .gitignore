@@ -18,3 +18,7 @@ yarn-error.log*
 # Next.js
 /.next
 /out
+
+# CI
+.build
+.release
