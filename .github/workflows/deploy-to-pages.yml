@@ -53,6 +53,7 @@ jobs:
           export NEXT_TELEMETRY_DISABLED=1
 
           ./.ci/release.sh
+          ls -la
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
