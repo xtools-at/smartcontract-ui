@@ -43,7 +43,7 @@
 		"chainlist:update": "git submodule update --init --remote; cd config/chainlist; git pull origin master; cd ../../; yarn chainlist:build",
 		"explorer": "node scripts/getExplorerInfo && yarn chainlist:build",
 		"update": "yarn chainlist:update && yarn explorer",
-		"upload": "cd .ci; bash release.sh; cd ../; rm -r out; rm -r .build; rm -r .release"
+		"upload": "cd .ci; bash release.sh; rm -rf .yarn; rm -rf node_modules; cd ../; rm -r out; rm -r .build; rm -r .release"
 	},
 	"devDependencies": {
 		"@types/md5": "^2.3.1",
