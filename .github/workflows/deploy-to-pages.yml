@@ -60,4 +60,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: smartcontract-ui/.build/
+          path: work/smartcontract-ui/.build/
