@@ -98,13 +98,18 @@ export const SourceBrowser = ({
 		toggleImportStatus(true);
 
 		try {
-			data = await (await fetch(urlFull, {})).json();
-			data = JSON.parse(data);
+			const req = await fetch(urlFull, {});
+			if (!req.ok) throw new Error("Network response was not ok (full)");
+			data = await req.json();
 		} catch (e1) {
+			console.error(e1);
 			try {
-				data = await (await fetch(urlPartial, {})).json();
-				data = JSON.parse(data);
-			} catch (e2) {}
+				const req = await fetch(urlPartial, {});
+				if (!req.ok) throw new Error("Network response was not ok (partial)");
+				data = await req.json();
+			} catch (e2) {
+				console.error(e1);
+			}
 		}
 
 		if (data?.output?.abi) {
