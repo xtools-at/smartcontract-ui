@@ -22,7 +22,7 @@ module.exports = {
 		43114, 43113,
 		// Sophon
 		50104, 531050104,
-		// Imtbl zkEVM
+		// Immutable zkEVM
 		13371, 13473,
 		// Polygon
 		137, 80001,
