@@ -9,7 +9,7 @@ module.exports = {
 	corsProxyUrlPrefix: "https://corsproxy.io/?",
 	creatorTwitter: "@xtools_",
 	backgroundUrl: "",
-	iframeUrl: "https://onbeam.com", // set to "" to use background image
+	iframeUrl: "https://docs.onbeam.com", // set to "" to use background image
 
 	// chains
 	defaultChainId: 4337,
@@ -17,9 +17,11 @@ module.exports = {
 		// Beam
 		4337, 13337,
 		// Eth
-		1, 5, 11155111,
+		1, 11155111,
 		// AVAX
 		43114, 43113,
+		// Sophon
+		50104, 531050104,
 		// Imtbl zkEVM
 		13371, 13473,
 		// Polygon
