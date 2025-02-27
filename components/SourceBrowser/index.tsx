@@ -274,6 +274,14 @@ export const SourceBrowser = ({
 						>
 							BeamSwap
 						</Link>
+						,{" "}
+						<Link
+							href={`${
+								basePath || ""
+							}/?json=/beamnodes.json&address=0x732080D7aD6A9C50039d7Ad7F5BD0a79670f7654&func=batchMint&network=13337`}
+						>
+							BeamNodes
+						</Link>
 						.
 						<br />
 						Or{" "}
