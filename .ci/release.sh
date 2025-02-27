@@ -20,7 +20,7 @@ echo "[RELEASE] Synced"
 
 echo "[RELEASE] Pushing build files.."
 mv $RELEASE_DIR/.git . ; rm -rf $RELEASE_DIR ; cp -r $BUILD_DIR $RELEASE_DIR ; mv .git $RELEASE_DIR/.git
-cd $RELEASE_DIR ; touch .nojekyll ; git add -A ; git commit -m "Manual build $GIT_COMMIT" ; git push origin $GIT_BUILD_BRANCH ; git checkout $GIT_BRANCH ; git branch -D $GIT_BUILD_BRANCH ; cd ..
+cd $RELEASE_DIR ; touch .nojekyll ; git add -A ; git commit -m "Manual build $GIT_COMMIT" ; git push origin $GIT_BUILD_BRANCH --force; git checkout $GIT_BRANCH ; git branch -D $GIT_BUILD_BRANCH ; cd ..
 echo "[RELEASE] Pushed"
 
 echo "[RELEASE] Switch back to $GIT_BRANCH.."
